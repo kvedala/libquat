@@ -6,7 +6,7 @@ set(LIBQUAT_VERSION_MINOR   1   CACHE STRING "libquat minor version number.")
 mark_as_advanced(VERSION_MAJOR VERSION_MINOR VERSION_PATCH)
 
 project (libquat)
-set (CMAKE_BUILD_TYPE Release)
+# set (CMAKE_BUILD_TYPE Release)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
@@ -26,6 +26,7 @@ else (BUILD_SHARED_LIBS)
 endif()
 
 set_target_properties(libquat PROPERTIES LINKER_LANGUAGE C)
+target_link_libraries(libquat m)
 
 configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/src/libquat.h.in" 
                 "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" )

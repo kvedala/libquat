@@ -12,22 +12,29 @@
 #define LIBQUAT_MAJOR_VER   @LIBQUAT_VERSION_MAJOR@
 #define LIBQUAT_MINOR_VER   @LIBQUAT_VERSION_MINOR@
 
-/**< a 2D vector type */
-typedef float 2d_vec [2];
+/** 3D vector type */
+typedef struct 3d_vec {
+  float x;  /**< X co-ordinate */
+  float y;  /**< Y co-ordinate */
+  float x;  /**< Z co-ordinate */
+};
 
-/**< a 3D vector type */
-typedef float 3d_vec [3];
+/** a Quaternion type */
+typedef struct quaternion {
+  float w;        /**< real part of quaternion */
+  3d_vec dual;    /**< dual part of quaternion also a 3D vector */
+};
 
-/**< a Quaternion type */
-typedef float quaternion [4];
-
-/**< a dual quaternion type */
-typedef float dual_quat [4];
+/** a dual quaternion type */
+typedef struct dual_quat {
+  quaternion real;  /**< real part of dual quaternion */
+  quaternion dual;  /**< dual part of dual quaternion */
+};
 
 /** Library return types indicating different error types. */
 typedef enum {
   OK = 0    /**< No error */
-} libquat_err;
+};
 
 /**
  * Obtain descriptive string message for a #libquat_err type error code.
@@ -35,5 +42,14 @@ typedef enum {
  * @return error description string
  */
 char *err_to_str(libquat_err err_code);
+
+/**
+ * Obtain the dot product of two 3D vectors.
+ * @f[\vec{a}\cdot\vec{b}=\sum 
+ * @param[in] a first vector
+ * @param[in] b second vector
+ * @return 
+ */
+float dot_prod(3d_vec *a, 3d_vec *b)
 
 #endif  // __LIBQUAT_H_
