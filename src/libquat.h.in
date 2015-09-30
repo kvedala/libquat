@@ -1,0 +1,39 @@
+/**
+  @file libquat.h
+  @brief
+  @version @LIBQUAT_VERSION_MAJOR@.@LIBQUAT_VERSION_MINOR@
+  @author Krishna Vedala
+  @copyright
+*/
+
+#ifndef __LIBQUAT_H_
+#define __LIBQUAT_H_
+
+#define LIBQUAT_MAJOR_VER   @LIBQUAT_VERSION_MAJOR@
+#define LIBQUAT_MINOR_VER   @LIBQUAT_VERSION_MINOR@
+
+/**< a 2D vector type */
+typedef float 2d_vec [2];
+
+/**< a 3D vector type */
+typedef float 3d_vec [3];
+
+/**< a Quaternion type */
+typedef float quaternion [4];
+
+/**< a dual quaternion type */
+typedef float dual_quat [4];
+
+/** Library return types indicating different error types. */
+typedef enum {
+  OK = 0    /**< No error */
+} libquat_err;
+
+/**
+ * Obtain descriptive string message for a #libquat_err type error code.
+ * @param[in] err_code error code from the library api calls
+ * @return error description string
+ */
+char *err_to_str(libquat_err err_code);
+
+#endif  // __LIBQUAT_H_
