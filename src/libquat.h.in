@@ -40,9 +40,14 @@ typedef struct mat_3x3_ {
 	float row3[3];	/**< 3 element row 3 */
 } mat_3x3;
 
+/**
+ * @addtogroup errors Error module
+ * @{
+ */
 /** Library return types indicating different error types. */
 typedef enum {
   LIBQUAT_OK = 0,    	/**< No error */
+  LIBQUAT_BAD_VERSION,	/**< header and library version do not match */
   LIBQUAT_DIV_BY_ZERO,	/**< Division by zero */
 } libquat_err;
 
@@ -52,6 +57,14 @@ typedef enum {
  * @return error description string
  */
 char *err_to_str(libquat_err err_code);
+
+/**
+ * Function to check the version number of the library with the header.
+ * @param[in] major_ver provide major version as input 
+ * @return error of type #libquat_err
+ */
+libquat_err libquat_version_check(const char major_ver);
+/** @} */
 
 /**
  * @addtogroup vec_3d 3D Vector operations

@@ -1,0 +1,29 @@
+1 VERSIONINFO
+FILEVERSION @LIBQUAT_VERSION_MAJOR@, @LIBQUAT_VERSION_MINOR@
+PRODUCTVERSION @LIBQUAT_VERSION_MAJOR@, @LIBQUAT_VERSION_MINOR@
+// FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+// FILEFLAGS VS_DEBUG | VS_PRIVATEBUILD | VS_SPECIALBUILD | VS_PRERELEASE | VS_PATCHED
+// FILEOS VOS__WINDOWS32
+// FILETYPE VFT_DLL
+// FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN BLOCK "040904E4" /* Language type = U.S English(0x0409) and Character Set = Windows, Multilingual(0x04E4) */
+    BEGIN
+/*      VALUE "Comments", PNG_LIBPNG_VERSIONINFO_COMMENTS "\000" */
+      VALUE "CompanyName", "Golden Era\000"
+      VALUE "FileDescription", "3D geometry algebra library\000"
+      VALUE "FileVersion", "@LIBQUAT_VERSION_MAJOR@.@LIBQUAT_VERSION_MINOR@\000"
+/*      VALUE "InternalName", "\000" */
+      VALUE "LegalCopyright", "\251 2015 Krishna Vedala\000"
+/*      VALUE "LegalTrademarks", PNG_USER_VERSIONINFO_LEGALTRADEMARKS "\000" */
+      VALUE "OriginalFilename", "@CMAKE_PROJECT_NAME@.DLL\000"
+      VALUE "ProductName", "libQuat\000"
+      VALUE "ProductVersion", "@LIBQUAT_VERSION_MAJOR@\000"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04E4
+  END
+END

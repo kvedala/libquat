@@ -12,8 +12,10 @@
 #else
 #include <math.h>
 #endif
-#include "libquat.h"
 #include <string.h>		// for memmove
+#include "libquat.h"
+#include "libquat_internal.h"
+
 
 void dot_prod(const vec_3d *a, const vec_3d *b, float *dot)
 {

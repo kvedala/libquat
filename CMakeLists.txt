@@ -5,7 +5,7 @@ set(LIBQUAT_VERSION_MINOR   1   CACHE STRING "libquat minor version number.")
 # set(VERSION_PATCH   1   CACHE STRING "Project patch version number.")
 mark_as_advanced(VERSION_MAJOR VERSION_MINOR VERSION_PATCH)
 
-project (libquat)
+project (libQuat)
 set (CMAKE_BUILD_TYPE Release)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
@@ -17,13 +17,23 @@ option (BUILD_STATIC_LIBS "Build the libquat library static." OFF)
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include)
 
+configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/src/libquat.h.in" 
+                "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" )
+
 FILE (GLOB SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c")
 
 if(BUILD_STATIC_LIBS)
-  add_library (libquat STATIC ${SOURCE_FILES})
+	set(LIBTYPE STATIC)
 else (BUILD_SHARED_LIBS)
-  add_library (libquat SHARED ${SOURCE_FILES})
+	set(LIBTYPE SHARED)
+	if (WIN32)
+		configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/src/version.rc.in
+                ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc @ONLY)
+		set (SOURCE_FILES ${SOURCE_FILES} ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc)
+	endif()
 endif()
+
+add_library (libquat ${LIBTYPE} ${SOURCE_FILES})
 
 set_target_properties(libquat PROPERTIES 
     LINKER_LANGUAGE   C
@@ -32,23 +42,20 @@ set_target_properties(libquat PROPERTIES
     CLEAN_DIRECT_OUTPUT 1)
 
 if(NOT WIN32)
-  find_library(M_LIBRARY
-    NAMES m
-    PATHS /usr/lib /usr/local/lib
-  )
-  if(NOT M_LIBRARY)
-    message(STATUS
-      "math library 'libm' not found - floating point support disabled")
-  endif()
+	find_library(M_LIBRARY
+		NAMES m
+		PATHS /usr/lib /usr/local/lib
+	)
+	if(NOT M_LIBRARY)
+		message(STATUS
+			"math library 'libm' not found - floating point support disabled")
+	endif()
 else()
   # not needed on windows
   set(M_LIBRARY "")
 endif()
 
 target_link_libraries(libquat m)
-
-configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/src/libquat.h.in" 
-                "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" )
 
 # add a target to generate API documentation with Doxygen
 find_package(Doxygen)
