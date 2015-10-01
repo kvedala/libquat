@@ -9,8 +9,10 @@
 #ifndef __LIBQUAT_H_
 #define __LIBQUAT_H_
 
-#define LIBQUAT_MAJOR_VER   @LIBQUAT_VERSION_MAJOR@
-#define LIBQUAT_MINOR_VER   @LIBQUAT_VERSION_MINOR@
+#define LIBQUAT_MAJOR_VER   @LIBQUAT_VERSION_MAJOR@		/**< Major version number of the library */
+#define LIBQUAT_MINOR_VER   @LIBQUAT_VERSION_MINOR@		/**< Minor version number of the library */
+
+#define LIBQUAT_EPSILON		1e-9	/**< Minimum recognizable value. Any value less than this is considered to be @f$=0@f$ */
 
 /** 3D vector type */
 typedef struct vec_3d_ {
@@ -31,9 +33,17 @@ typedef struct dual_quat_ {
   quaternion dual;  /**< dual part of dual quaternion */
 } dual_quat;
 
+/** A 3x3 Matrix typedfinition */
+typedef struct mat_3x3_ {
+	float row1[3];	/**< 3 element row 1 */
+	float row2[3];	/**< 3 element row 2 */
+	float row3[3];	/**< 3 element row 3 */
+} mat_3x3;
+
 /** Library return types indicating different error types. */
 typedef enum {
-  OK = 0    /**< No error */
+  LIBQUAT_OK = 0,    	/**< No error */
+  LIBQUAT_DIV_BY_ZERO,	/**< Division by zero */
 } libquat_err;
 
 /**
@@ -56,7 +66,7 @@ char *err_to_str(libquat_err err_code);
  * @param[in] b second vector
  * @param[out] o resulting dot product
  */
-void dot_prod(vec_3d *a, vec_3d *b, float *o);
+void dot_prod(const vec_3d *a, const vec_3d *b, float *o);
 
 /**
  * Compute the vector product of two 3d vectors.
@@ -73,14 +83,14 @@ void dot_prod(vec_3d *a, vec_3d *b, float *o);
  * @param[in] b second vector @f$\vec{b}@f$
  * @param[out] o resultant vector @f$\vec{o}=\vec{a}\times\vec{b}@f$
  */
-void vector_prod (vec_3d *a, vec_3d *b, vec_3d *o);
+void vector_prod (const vec_3d *a, const vec_3d *b, vec_3d *o);
 
 /**
  * Print formatted vector on stdout.
  * @param[in] a vector to print
  * @param[in] name  name of the vector
  */
-void print_vector(vec_3d *a, const char* name);
+const char* print_vector(const vec_3d *a, const char* name);
 
 /** 
  * Compute the norm a vector.
@@ -88,7 +98,7 @@ void print_vector(vec_3d *a, const char* name);
  * @param[in] a input vector
  * @param[out] n norm of the given vector
  */
-void vector_norm(vec_3d *a, float *n);
+void vector_norm(const vec_3d *a, float *n);
 
 /**
  * Obtain unit vector in the same direction as given vector.
@@ -96,7 +106,20 @@ void vector_norm(vec_3d *a, float *n);
  * @param[in] a input vector
  * @param[out] a_hat unit vector in the direction of @f$\vec{a}@f$
  */
-void unit_vec(vec_3d *a, vec_3d *a_hat);
+libquat_err unit_vec(const vec_3d *a, vec_3d *a_hat);
+
+/**
+ * The cross product of vectors can be represented as a matrix 
+ * multiplication operation. This function obtains the `3x3` matrix 
+ * of the cross-product operator from the first vector.
+ * @f[\begin{align*}
+ * \left(\vec{a}\times\right)\vec{b} &= \tilde{A}_a\vec{b}\\
+ * \tilde{A}_a &= \begin{bmatrix}0&-a_z&a_y\\a_z&0&-a_x\\-a_y&a_x&0\end{bmatrix}
+ * \end{align*}@f]
+ * @param[in] a input vector
+ * @param[out] A the `3x3` matrix for the cross product operator @f$\left(\vec{a}\times\right)@f$
+ */
+void get_cross_matrix(const vec_3d *a, mat_3x3 *A);
 
 /** @} */
 
