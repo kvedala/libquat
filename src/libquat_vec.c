@@ -1,4 +1,4 @@
-/** 
+/**
  * @file libquat_vec.c
  * API Functions related to 3D vector operations.
  * @author Krishna Vedala
@@ -15,6 +15,30 @@
 #include <string.h>		// for memmove
 #include "libquat.h"
 #include "libquat_internal.h"
+
+
+void vector_sub(const vec_3d *a, const vec_3d *b, vec_3d *out)
+{
+#ifdef LIBQUAT_ARM
+  arm_sub_f32((float*) a, (float*) b, (float*) out);
+#else
+  out->x = a->x - b->x;
+  out->y = a->y - b->y;
+  out->z = a->z - b->z;
+#endif
+}
+
+
+void vector_add(const vec_3d *a, const vec_3d *b, vec_3d *out)
+{
+#ifdef LIBQUAT_ARM
+  arm_add_f32((float*) a, (float*) b, (float*) out);
+#else
+  out->x = a->x + b->x;
+  out->y = a->y + b->y;
+  out->z = a->z + b->z;
+#endif
+}
 
 
 void dot_prod(const vec_3d *a, const vec_3d *b, float *dot)
@@ -42,7 +66,7 @@ void vector_prod (const vec_3d *a, const vec_3d *b, vec_3d *o)
 const char *print_vector(const vec_3d *a, const char *name)
 {
 	static char vec_str[100];
-	sprintf(vec_str, "vec(%s) = (%.3g)i + (%.3g)j + (%.3g)k\n", 
+	sprintf(vec_str, "vec(%s) = (%.3g)i + (%.3g)j + (%.3g)k\n",
       name, a->x, a->y, a->z);
 	return vec_str;
 }
@@ -62,7 +86,7 @@ libquat_err unit_vec(const vec_3d *a, vec_3d *n)
 {
 	float norm;
 	vector_norm(a, &norm);
-	if (abs(norm) < LIBQUAT_EPSILON)
+	if (fabsf(norm) < LIBQUAT_EPSILON)
 		return LIBQUAT_DIV_BY_ZERO;
 
 	if (norm != 1.F)	// perform division only if needed
