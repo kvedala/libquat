@@ -14,32 +14,6 @@
 
 #define LIBQUAT_EPSILON		1e-9	/**< Minimum recognizable value. Any value less than this is considered to be @f$=0@f$ */
 
-/** 3D vector type */
-typedef struct vec_3d_ {
-  float x;  /**< X co-ordinate */
-  float y;  /**< Y co-ordinate */
-  float z;  /**< Z co-ordinate */
-} vec_3d;
-
-/** a Quaternion type */
-typedef struct quaternion_ {
-  float w;        /**< real part of quaternion */
-  vec_3d dual;    /**< dual part of quaternion also a 3D vector */
-} quaternion;
-
-/** a dual quaternion type */
-typedef struct dual_quat_ {
-  quaternion real;  /**< real part of dual quaternion */
-  quaternion dual;  /**< dual part of dual quaternion */
-} dual_quat;
-
-/** A 3x3 Matrix typedfinition */
-typedef struct mat_3x3_ {
-	float row1[3];	/**< 3 element row 1 */
-	float row2[3];	/**< 3 element row 2 */
-	float row3[3];	/**< 3 element row 3 */
-} mat_3x3;
-
 /**
  * @addtogroup errors Error module
  * @{
@@ -70,6 +44,14 @@ libquat_err libquat_version_check(const char major_ver);
  * @addtogroup vec_3d 3D Vector operations
  * @{
  */
+ /** 3D vector type */
+typedef struct vec_3d_ {
+  float x;  /**< X co-ordinate */
+  float y;  /**< Y co-ordinate */
+  float z;  /**< Z co-ordinate */
+} vec_3d;
+
+
 /**
  * Obtain the dot product of two 3D vectors.
  * @f[
@@ -135,5 +117,33 @@ libquat_err unit_vec(const vec_3d *a, vec_3d *a_hat);
 void get_cross_matrix(const vec_3d *a, mat_3x3 *A);
 
 /** @} */
+
+/** @addtogroup quats 3D Quaternion operations
+ * @{
+ */
+/** a Quaternion type */
+typedef struct quaternion_ {
+  float w;        /**< real part of quaternion */
+  vec_3d dual;    /**< dual part of quaternion also a 3D vector */
+} quaternion;
+
+/** @} */
+
+/** @addtogroup dual_quats 3D Quaternion operations
+ * @{
+ */
+/** a dual quaternion type */
+typedef struct dual_quat_ {
+  quaternion real;  /**< real part of dual quaternion */
+  quaternion dual;  /**< dual part of dual quaternion */
+} dual_quat;
+
+/** A 3x3 Matrix typedfinition */
+typedef struct mat_3x3_ {
+	float row1[3];	/**< 3 element row 1 */
+	float row2[3];	/**< 3 element row 2 */
+	float row3[3];	/**< 3 element row 3 */
+} mat_3x3;
+
 
 #endif  // __LIBQUAT_H_
