@@ -41,6 +41,18 @@ libquat_err libquat_version_check(const char major_ver);
 /** @} */
 
 /**
+ * @addtogroup matrix Matrix operations
+ * @{
+ */
+/** A 3x3 Matrix typedfinition */
+typedef struct mat_3x3_ {
+	float row1[3];	/**< 3 element row 1 */
+	float row2[3];	/**< 3 element row 2 */
+	float row3[3];	/**< 3 element row 3 */
+} mat_3x3;
+/** @} */
+
+/**
  * @addtogroup vec_3d 3D Vector operations
  * @{
  */
@@ -62,6 +74,26 @@ typedef struct vec_3d_ {
  * @param[out] o resulting dot product
  */
 void dot_prod(const vec_3d *a, const vec_3d *b, float *o);
+
+/**
+ * Subtract one vector from another. @f[
+ * \vec{c}=\vec{a}-\vec{b}=\left(a_x-b_x\right)\hat{i}+
+ * \left(a_y-b_y\right)\hat{j}+\left(a_z-b_z\right)\hat{k}@f]
+ * @param[in] a vector to subtract from
+ * @param[in] b vector to subtract
+ * @param[out] out resultant vector
+ */
+void vector_sub(const vec_3d *a, const vec_3d *b, vec_3d *out);
+
+/**
+ * Add one vector to another. @f[
+ * \vec{c}=\vec{a}+\vec{b}=\left(a_x+b_x\right)\hat{i}+
+ * \left(a_y+b_y\right)\hat{j}+\left(a_z+b_z\right)\hat{k}@f]
+ * @param[in] a vector to add to
+ * @param[in] b vector to add
+ * @param[out] out resultant vector
+ */
+void vector_add(const vec_3d *a, const vec_3d *b, vec_3d *out);
 
 /**
  * Compute the vector product of two 3d vectors.
@@ -137,13 +169,7 @@ typedef struct dual_quat_ {
   quaternion real;  /**< real part of dual quaternion */
   quaternion dual;  /**< dual part of dual quaternion */
 } dual_quat;
-
-/** A 3x3 Matrix typedfinition */
-typedef struct mat_3x3_ {
-	float row1[3];	/**< 3 element row 1 */
-	float row2[3];	/**< 3 element row 2 */
-	float row3[3];	/**< 3 element row 3 */
-} mat_3x3;
+ /** @} */
 
 
 #endif  // __LIBQUAT_H_
