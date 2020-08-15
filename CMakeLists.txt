@@ -2,18 +2,18 @@ cmake_minimum_required (VERSION 2.8)
 
 set(LIBQUAT_VERSION_MAJOR   0   CACHE STRING "libquat major version number.")
 set(LIBQUAT_VERSION_MINOR   1   CACHE STRING "libquat minor version number.")
-# set(VERSION_PATCH   1   CACHE STRING "Project patch version number.")
+set(VERSION_PATCH   1   CACHE STRING "Project patch version number.")
 mark_as_advanced(VERSION_MAJOR VERSION_MINOR VERSION_PATCH)
 
-project (libQuat)
+project (libQuat LANGUAGES C)
 set (CMAKE_BUILD_TYPE RelWithDebInfo)
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+# set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+# set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-option (BUILD_SHARED_LIBS "Build the libquat library shared." ON)
-option (BUILD_STATIC_LIBS "Build the libquat library static." OFF)
+# option (BUILD_SHARED_LIBS "Build the libquat library shared." ON)
+option (BUILD_STATIC_LIBS "Build the libquat library static." ON)
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include)
 
@@ -71,7 +71,8 @@ if(BUILD_DOCUMENTATION)
     install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/html DESTINATION share/doc)
 endif()
 
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
+
 install(TARGETS libquat DESTINATION lib)
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" DESTINATION include)
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
