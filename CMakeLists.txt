@@ -6,7 +6,7 @@ set(LIBQUAT_VERSION_MINOR   1   CACHE STRING "libquat minor version number.")
 mark_as_advanced(VERSION_MAJOR VERSION_MINOR VERSION_PATCH)
 
 project (libQuat)
-set (CMAKE_BUILD_TYPE Release)
+set (CMAKE_BUILD_TYPE RelWithDebInfo)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
@@ -17,7 +17,7 @@ option (BUILD_STATIC_LIBS "Build the libquat library static." OFF)
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/src/libquat.h.in" 
+configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/src/libquat.h.in"
                 "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" )
 
 FILE (GLOB SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c")
@@ -33,29 +33,20 @@ else (BUILD_SHARED_LIBS)
 	endif()
 endif()
 
+cmake_policy(SET CMP0042 NEW)
 add_library (libquat ${LIBTYPE} ${SOURCE_FILES})
 
-set_target_properties(libquat PROPERTIES 
+set_target_properties(libquat PROPERTIES
     LINKER_LANGUAGE   C
     VERSION ${LIBQUAT_VERSION_MAJOR}.${LIBQUAT_VERSION_MINOR}
     SOVERSION ${LIBQUAT_VERSION_MAJOR}
     CLEAN_DIRECT_OUTPUT 1)
 
-if(NOT WIN32)
-	find_library(M_LIBRARY
-		NAMES m
-		PATHS /usr/lib /usr/local/lib
-	)
-	if(NOT M_LIBRARY)
-		message(STATUS
-			"math library 'libm' not found - floating point support disabled")
-	endif()
-else()
-  # not needed on windows
-  set(M_LIBRARY "")
-endif()
+find_library(M_LIBRARY m)
 
-target_link_libraries(libquat m)
+if(M_LIBRARY)
+    target_link_libraries(libquat ${M_LIBRARY})
+endif()
 
 # add a target to generate API documentation with Doxygen
 find_package(Doxygen)
