@@ -19,7 +19,7 @@
             considered to be @f$=0@f$ */
 
 #ifdef __cplusplus
-{
+extern "C" {
 #endif
 
     /**

@@ -5,7 +5,7 @@ set(LIBQUAT_VERSION_MINOR   1   CACHE STRING "libquat minor version number.")
 set(VERSION_PATCH   1   CACHE STRING "Project patch version number.")
 mark_as_advanced(VERSION_MAJOR VERSION_MINOR VERSION_PATCH)
 
-project (libQuat LANGUAGES C)
+project (libQuat)
 set (CMAKE_BUILD_TYPE RelWithDebInfo)
 
 # set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
@@ -37,7 +37,7 @@ cmake_policy(SET CMP0042 NEW)
 add_library (libquat ${LIBTYPE} ${SOURCE_FILES})
 
 set_target_properties(libquat PROPERTIES
-    LINKER_LANGUAGE   C
+    LINKER_LANGUAGE C
     VERSION ${LIBQUAT_VERSION_MAJOR}.${LIBQUAT_VERSION_MINOR}
     SOVERSION ${LIBQUAT_VERSION_MAJOR}
     CLEAN_DIRECT_OUTPUT 1)
