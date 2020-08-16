@@ -9,17 +9,13 @@
 #ifndef __LIBQUAT_H_
 #define __LIBQUAT_H_
 
-#define LIBQUAT_MAJOR_VER \
-    @LIBQUAT_VERSION_MAJOR@ /**< Major version number of the library */
-#define LIBQUAT_MINOR_VER \
-    @LIBQUAT_VERSION_MINOR@ /**< Minor version number of the library */
-
 #define LIBQUAT_EPSILON                                               \
     1e-9 /**< Minimum recognizable value. Any value less than this is \
             considered to be @f$=0@f$ */
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
     /**
