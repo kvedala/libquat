@@ -25,6 +25,7 @@ add_compile_definitions(LIBQUAT_MINOR_VER=${LIBQUAT_VERSION_MINOR})
 set(SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_err.c
     ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_vec.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_quat.c
     ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_internal.c
 )
 
@@ -42,6 +43,7 @@ endif()
 cmake_policy(SET CMP0042 NEW)
 add_library (libquat ${LIBTYPE} ${SOURCE_FILES})
 
+target_include_directories(libquat BEFORE PUBLIC ${CMAKE_CURRENT_BUILD_DIR}/include)
 set_target_properties(libquat PROPERTIES
     LINKER_LANGUAGE C
     VERSION ${LIBQUAT_VERSION_MAJOR}.${LIBQUAT_VERSION_MINOR}
@@ -86,7 +88,7 @@ if(BUILD_DOCUMENTATION)
         set(DOXYGEN_FILE_PATTERNS *.c *.h *.md)
         set(DOXYGEN_MATHJAX_EXTENSIONS  TeX/AMSmath TeX/AMSsymbols)
         set(DOXYGEN_TAGFILES "doc/cppreference-doxygen-web.tag.xml=http://en.cppreference.com/w/")
-        set(DOXYGEN_MATHJAX_RELPATH "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js")
+        set(DOXYGEN_MATHJAX_RELPATH "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML")
         if(Doxygen_dot_FOUND)
             set(DOXYGEN_HAVE_DOT YES)
             set(DOXYGEN_CALL_GRAPH YES)
