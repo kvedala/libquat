@@ -1,6 +1,6 @@
 /**
- * @file libquat_internal.c
- * API functions to handle library errors.
+ * @file
+ * @brief API functions to handle library errors.
  * @author Krishna Vedala
  */
 

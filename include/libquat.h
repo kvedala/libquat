@@ -1,10 +1,12 @@
 /**
-  @file libquat.h
-  @brief
-  @version @LIBQUAT_VERSION_MAJOR@.@LIBQUAT_VERSION_MINOR@
-  @author Krishna Vedala
-  @copyright
-*/
+ * @addtogroup quaternions Library for 3D Vectors & Quaternions
+ * @{
+ * @file
+ * @brief Library that provides data types for 3D vectors and quaternions,
+ * inter-conversions and related operations.
+ * @version @LIBQUAT_VERSION_MAJOR@.@LIBQUAT_VERSION_MINOR@
+ * @author Krishna Vedala
+ */
 
 #ifndef __LIBQUAT_H_
 #define __LIBQUAT_H_
@@ -49,7 +51,7 @@ extern "C"
      * @addtogroup matrix Matrix operations
      * @{
      */
-    /** A 3x3 Matrix typedfinition */
+    /** A 3x3 Matrix type definition */
     typedef struct mat_3x3_
     {
         float row1[3]; /**< 3 element row 1 */
@@ -161,16 +163,98 @@ extern "C"
     /** @addtogroup quats 3D Quaternion operations
      * @{
      */
-    /** a Quaternion type */
+    /** a Quaternion type represented using a scalar \f$w\f$ or \f$q_0\f$ and a
+     * 3D vector \f$\left(q_1,q_2,q_3\right)\f$
+     */
     typedef struct quaternion_
     {
-        float w;     /**< real part of quaternion */
-        vec_3d dual; /**< dual part of quaternion also a 3D vector */
+        float w; /**< real part of quaternion */
+        union {  /**< dual part of quaternion also a 3D vector */
+            vec_3d dual;
+            struct
+            {
+                float q1, q2, q3;
+            };
+        };
     } quaternion;
+
+    /** 3D Euler or Tait-Bryan angles (in radian) */
+    typedef struct euler_
+    {
+        float roll;    /**< or bank \f$\phi\f$ = rotation about X axis */
+        float pitch;   /**< or elevation \f$\theta\f$ = rotation about Y axis */
+        float yaw;     /**< or elevation \f$\psi\f$ = rotation about Z axis */
+        float heading; /**< \f$\alpha\f$ Angle between X & magnetic north */
+    } euler;
+
+    /**
+     * Function to convert given Euler angles to a quaternion.
+     * \f{eqnarray*}{
+     * q_{0} & =
+     * &\cos\left(\frac{\phi}{2}\right)\cos\left(\frac{\theta}{2}\right)\cos\left(\frac{\psi}{2}\right)
+     * +
+     * \sin\left(\frac{\phi}{2}\right)\sin\left(\frac{\theta}{2}\right)\sin\left(\frac{\psi}{2}\right)\\
+     * q_{1} & =
+     * &\sin\left(\frac{\phi}{2}\right)\cos\left(\frac{\theta}{2}\right)\cos\left(\frac{\psi}{2}\right)
+     * -
+     * \cos\left(\frac{\phi}{2}\right)\sin\left(\frac{\theta}{2}\right)\sin\left(\frac{\psi}{2}\right)\\
+     * q_{2} & =
+     * &\cos\left(\frac{\phi}{2}\right)\sin\left(\frac{\theta}{2}\right)\cos\left(\frac{\psi}{2}\right)
+     * +
+     * \sin\left(\frac{\phi}{2}\right)\cos\left(\frac{\theta}{2}\right)\sin\left(\frac{\psi}{2}\right)\\
+     * q_{3} & =
+     * &\cos\left(\frac{\phi}{2}\right)\cos\left(\frac{\theta}{2}\right)\sin\left(\frac{\psi}{2}\right)
+     * -
+     * \sin\left(\frac{\phi}{2}\right)\sin\left(\frac{\theta}{2}\right)\cos\left(\frac{\psi}{2}\right)\\
+     * \f}
+     *
+     * @param [in] in_euler input Euler angles instance
+     * @param [out] out_quat output quaternion instance
+     */
+    void quat_from_euler(const euler *in_euler, quaternion *out_quat);
+
+    /**
+     * Function to convert given quaternion to Euler angles.
+     * \f{eqnarray*}{
+     * \phi & = &
+     * \tan^{-1}\left[\frac{2\left(q_0q_1+q_2q_3\right)}{1-2\left(q_1^2+q_2^2\right)}\right]\\
+     * \theta & =
+     * &-\sin^{-1}\left[2\left(q_0q_2-q_3q_1\right)\right]\\
+     * \psi & = &
+     * \tan^{-1}\left[\frac{2\left(q_0q_3+q_1q_2\right)}{1-2\left(q_2^2+q_3^2\right)}\right]\\
+     * \f}
+     *
+     * @param [in] in_quat input quaternion instance
+     * @param [out] out_euler output Euler angles instance
+     */
+    void euler_from_quat(const quaternion *in_quat, euler *out_euler);
+
+    /**
+     * Function to multiply two quaternions.
+     * \f{eqnarray*}{
+     * \mathbf{c} & = & \mathbf{a}\otimes\mathbf{b}\\
+     * & = & \begin{bmatrix}a_{0} & a_{1} & a_{2} &
+     *  a_{3}\end{bmatrix}\otimes\begin{bmatrix}b_{0} & b_{1} & b_{2} &
+     *  b_{3}\end{bmatrix}\\
+     * & = &
+     * \begin{bmatrix}
+     *  a_{0}b_{0}-a_{1}b_{1}-a_{2}b_{2}-a_{3}b_{3}\\
+     *  a_{0}b_{1}+a_{1}b_{0}+a_{2}b_{3}-a_{3}b_{2}\\
+     *  a_{0}b_{2}-a_{1}b_{3}+a_{2}b_{0}+a_{3}b_{1}\\
+     *  a_{0}b_{3}+a_{1}b_{2}-a_{2}b_{1}+a_{3}b_{0}
+     * \end{bmatrix}^{T}
+     * \f}
+     *
+     * @param [in] in_quat1 first input quaternion instance
+     * @param [in] in_quat2 second input quaternion instance
+     * @param [out] out_quat output quaternion instance
+     */
+    void quaternion_multiply(const quaternion *in_quat1,
+                             const quaternion *in_quat2, quaternion *out_quat);
 
     /** @} */
 
-    /** @addtogroup dual_quats 3D Quaternion operations
+    /** @addtogroup dual_quats 3D Dual-Quaternion operations
      * @{
      */
     /** a dual quaternion type */
@@ -180,10 +264,12 @@ extern "C"
         quaternion dual; /**< dual part of dual quaternion */
     } dual_quat;
 
+    /** @} */
+
 #ifdef __cplusplus
 }
 #endif
 
-/** @} */
-
 #endif  // __LIBQUAT_H_
+
+/** @} */

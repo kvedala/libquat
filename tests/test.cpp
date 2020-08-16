@@ -1,5 +1,5 @@
 /**
-  @file libquat_test
+  @file
   @brief Simple program to test the different aspects of `libquat` library.
   @author Krishna Vedala
 */
@@ -29,6 +29,17 @@ int main(void)
     vector_prod(&a, &b, &c);
     std::cout << "Vector product ";
     std::cout << print_vector(&c, "c");
+
+    quaternion quat = {0.7071, 0.7071, 0, 0};
+    euler eul = {0};
+    euler_from_quat(&quat, &eul);
+    std::cout << "Euler: " << eul.pitch << ", " << eul.roll << ", " << eul.yaw
+              << "\n";
+
+    quaternion test_quat;
+    quat_from_euler(&eul, &test_quat);
+    std::cout << "Quaternion: " << test_quat.w << ", " << test_quat.dual.x
+              << ", " << test_quat.dual.y << ", " << test_quat.dual.z << "\n";
 
     return 0;
 }

@@ -1,5 +1,5 @@
 /**
- * @file libquat_err.c
+ * @file
  * @brief API functions to handle library errors.
  * @author Krishna Vedala
  */

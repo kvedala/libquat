@@ -1,6 +1,8 @@
 /**
- * @file libquat_internal.h
- * API functions to handle library errors.
+ * @addtogroup quaternions Library for 3D Vectors & Quaternions
+ * @{
+ * @file
+ * @brief API functions to handle library errors.
  * @author Krishna Vedala
  */
 #ifndef _LIBQUAT_INTERNAL_
@@ -15,10 +17,15 @@ static const char libquat_minor_ver =
 
 #ifdef __cplusplus
 /**< internal variable to keep a track of version validity */
-extern "C" char is_libquat_valid;
-#else
-/**< internal variable to keep a track of version validity */
-extern char is_libquat_valid;
+extern "C"
+{
+#endif
+    /**< internal variable to keep a track of version validity */
+    extern char is_libquat_valid;
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif
+/** @} */

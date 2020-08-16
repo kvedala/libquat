@@ -1,5 +1,5 @@
 /**
-  @file libquat_test
+  @file
   @brief Simple program to test the different aspects of `libquat` library.
   @author Krishna Vedala
 */

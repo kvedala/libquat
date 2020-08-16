@@ -1,6 +1,6 @@
 /**
- * @file libquat_vec.c
- * API Functions related to 3D vector operations.
+ * @file
+ * @brief API Functions related to 3D vector operations.
  * @author Krishna Vedala
  */
 
