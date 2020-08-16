@@ -15,8 +15,8 @@ int main(void)
     vec_3d c;
     float d;
 
-    printf(print_vector(&a, "a"));
-    printf(print_vector(&b, "b"));
+    printf("%s", print_vector(&a, "a"));
+    printf("%s", print_vector(&b, "b"));
 
     vector_norm(&a, &d);
     printf("|a| = %.4g\n", d);
@@ -28,7 +28,7 @@ int main(void)
 
     vector_prod(&a, &b, &c);
     printf("Vector product ");
-    printf(print_vector(&c, "c"));
+    printf("%s", print_vector(&c, "c"));
 
     return 0;
 }

@@ -1,11 +1,11 @@
-cmake_minimum_required (VERSION 2.8)
+cmake_minimum_required (VERSION 3.6)
+project (libQuat)
 
 set(LIBQUAT_VERSION_MAJOR   0   CACHE STRING "libquat major version number.")
 set(LIBQUAT_VERSION_MINOR   1   CACHE STRING "libquat minor version number.")
 set(VERSION_PATCH   1   CACHE STRING "Project patch version number.")
 mark_as_advanced(VERSION_MAJOR VERSION_MINOR VERSION_PATCH)
 
-project (libQuat)
 set (CMAKE_BUILD_TYPE RelWithDebInfo)
 
 # set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
@@ -13,18 +13,24 @@ set (CMAKE_BUILD_TYPE RelWithDebInfo)
 # set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # option (BUILD_SHARED_LIBS "Build the libquat library shared." ON)
-option (BUILD_STATIC_LIBS "Build the libquat library static." ON)
+# option (BUILD_STATIC_LIBS "Build the libquat library static." ON)
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/src/libquat.h.in"
-                "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" )
+add_compile_definitions(LIBQUAT_MAJOR_VER=${LIBQUAT_VERSION_MAJOR})
+add_compile_definitions(LIBQUAT_MINOR_VER=${LIBQUAT_VERSION_MINOR})
+# configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/src/libquat.h.in"
+#                 "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" )
 
-FILE (GLOB SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c")
+set(SOURCE_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_err.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_vec.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_internal.c
+)
 
 if(BUILD_STATIC_LIBS)
 	set(LIBTYPE STATIC)
-else (BUILD_SHARED_LIBS)
+else ()
 	set(LIBTYPE SHARED)
 	if (WIN32)
 		configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/src/version.rc.in
@@ -52,27 +58,52 @@ endif()
 find_package(Doxygen)
 option(BUILD_DOCUMENTATION "Create and install the HTML based API documentation (requires Doxygen)" ${DOXYGEN_FOUND})
 
-if(BUILD_DOCUMENTATION)
-    if(NOT DOXYGEN_FOUND)
-        message(FATAL_ERROR "Doxygen is needed to build the documentation.")
-    endif()
-
-    set(doxyfile_in ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
-    set(doxyfile ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
-
-    configure_file(${doxyfile_in} ${doxyfile} @ONLY)
-
-    add_custom_target(doc
-        COMMAND ${DOXYGEN_EXECUTABLE} ${doxyfile}
-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-        COMMENT "Generating API documentation with Doxygen"
-        VERBATIM)
-
-    install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/html DESTINATION share/doc)
-endif()
-
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
 
 install(TARGETS libquat DESTINATION lib)
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" DESTINATION include)
 
+if(BUILD_DOCUMENTATION)
+    ## Configure Doxygen documentation system
+    cmake_policy(SET CMP0054 NEW)
+    cmake_policy(SET CMP0057 NEW)
+    find_package(Doxygen OPTIONAL_COMPONENTS dot dia)
+    if(DOXYGEN_FOUND)
+        set(DOXYGEN_GENERATE_MAN NO)
+        set(DOXYGEN_USE_MATHJAX YES)
+        set(DOXYGEN_GENERATE_HTML YES)
+        # set(DOXYGEN_HTML_TIMESTAMP YES)
+        set(DOXYGEN_EXTRACT_STATIC YES)
+        set(DOXYGEN_INLINE_SOURCES YES)
+        set(DOXYGEN_CREATE_SUBDIRS YES)
+        set(DOXYGEN_GENERATE_TREEVIEW YES)
+        set(DOXYGEN_JAVADOC_AUTOBRIEF YES)
+        set(DOXYGEN_STRIP_CODE_COMMENTS NO)
+        set(DOXYGEN_ENABLE_PREPROCESSING YES)
+        set(DOXYGEN_EXT_LINKS_IN_WINDOW YES)
+        set(DOXYGEN_OPTIMIZE_OUTPUT_FOR_C YES)
+        set(DOXYGEN_CLANG_ASSISTED_PARSING YES)
+        set(DOXYGEN_FILE_PATTERNS *.c *.h *.md)
+        set(DOXYGEN_MATHJAX_EXTENSIONS  TeX/AMSmath TeX/AMSsymbols)
+        set(DOXYGEN_TAGFILES "doc/cppreference-doxygen-web.tag.xml=http://en.cppreference.com/w/")
+        set(DOXYGEN_MATHJAX_RELPATH "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js")
+        if(Doxygen_dot_FOUND)
+            set(DOXYGEN_HAVE_DOT YES)
+            set(DOXYGEN_CALL_GRAPH YES)
+            set(DOXYGEN_INTERACTIVE_SVG YES)
+            set(DOXYGEN_DOT_IMAGE_FORMAT "svg")
+        endif()
+        if(OPENMP_FOUND)
+            set(DOXYGEN_PREDEFINED "_OPENMP=1")
+        endif()
+        if(GLUT_FOUND)
+            set(DOXYGEN_PREDEFINED ${DOXYGEN_PREDEFINED} "GLUT_FOUND=1")
+        endif()
+
+        doxygen_add_docs(
+            doc
+            ${PROJECT_SOURCE_DIR}
+            COMMENT "Generate documentation"
+        )
+    endif()
+endif()
