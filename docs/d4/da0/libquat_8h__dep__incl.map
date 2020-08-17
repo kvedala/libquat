@@ -1,8 +1,9 @@
 <map id="include/libquat.h" name="include/libquat.h">
-<area shape="rect" id="node1" title="Library that provides data types for 3D vectors and quaternions, inter&#45;conversions and related operat..." alt="" coords="317,5,433,32"/>
+<area shape="rect" id="node1" title="Library that provides data types for 3D vectors and quaternions, inter&#45;conversions and related operat..." alt="" coords="390,5,506,32"/>
 <area shape="rect" id="node2" href="$dd/dc7/libquat__err_8c.html" title="API functions to handle library errors." alt="" coords="5,80,120,107"/>
 <area shape="rect" id="node3" href="$da/d4a/libquat__internal_8c.html" title="API functions to handle library errors." alt="" coords="145,80,287,107"/>
 <area shape="rect" id="node4" href="$d8/d4a/libquat__quat_8c.html" title="API Functions related to 3D Quaternion operations." alt="" coords="312,80,437,107"/>
 <area shape="rect" id="node5" href="$d2/dd2/libquat__vec_8c.html" title="API Functions related to 3D vector operations." alt="" coords="462,80,583,107"/>
 <area shape="rect" id="node6" href="$d8/db9/test_8c.html" title="Simple program to test the different aspects of libquat library." alt="" coords="608,80,696,107"/>
+<area shape="rect" id="node7" href="$df/dac/test_8cpp.html" title="Simple program to test the different aspects of libquat library." alt="" coords="721,80,823,107"/>
 </map>
