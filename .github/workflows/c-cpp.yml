@@ -125,9 +125,9 @@ jobs:
       - name: Documentation
         if: ${{ os == macOS }}
         run: |
-        brew install graphviz ninja doxygen 
-        cmake --build build -t doc 
-        cp -r build/html/* doc/
+          brew install graphviz ninja doxygen 
+          cmake --build build -t doc 
+          cp -r build/html/* doc/
       - name: Commit Documentation 
         if: ${{ os == macOS }}
         run: |
