@@ -5,7 +5,7 @@
  * @author Krishna Vedala
  */
 
-#include "libquat.h"
+#include "../include/libquat.h"
 #include <cmath>
 #include <iostream>
 #include <cassert>
@@ -15,7 +15,7 @@
  *
  * @return int
  */
-int main(void)
+auto main() -> int
 {
     vec_3d a = {1.f, 2.f, 3.f};
     vec_3d b = {1.f, 1.f, 1.f};

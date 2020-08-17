@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include <math.h>
-#include "libquat.h"
+#include "../include/libquat.h"
 
 /**
  * @brief Test program in C

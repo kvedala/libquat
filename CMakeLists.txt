@@ -8,6 +8,10 @@ mark_as_advanced(VERSION_MAJOR VERSION_MINOR VERSION_PATCH)
 
 set (CMAKE_BUILD_TYPE RelWithDebInfo)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+# set(CMAKE_CXX_CLANG_TIDY clang-tidy --fix --fix-errors)
+
 # set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 # set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 # set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -64,6 +68,7 @@ option(BUILD_DOCUMENTATION "Create and install the HTML based API documentation 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
 
 install(TARGETS libquat DESTINATION lib)
+install(TARGETS libquat EXPORT libuqat_export)
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" DESTINATION include)
 
 if(BUILD_DOCUMENTATION)

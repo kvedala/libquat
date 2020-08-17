@@ -40,7 +40,7 @@ jobs:
               git "mv" "${fname}" ${new_fname}
             fi
           done
-          git commit -am "formatting filenames $GITHUB_SHA" ||  true
+          git commit -am "formatting filenames ${GITHUB_SHA::8}" ||  true
 
       - name: Get file changes
         run: |
@@ -105,7 +105,7 @@ jobs:
             sys.exit(bad_files)
       - name: Commit and push changes
         run: |
-          git commit -am "clang-tidy fixes for $GITHUB_SHA" ||  true
+          git commit -am "clang-tidy fixes for ${GITHUB_SHA::8}" ||  true
           git push --force origin HEAD:$GITHUB_REF || true
 
   build:
@@ -119,19 +119,19 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Documentation Requirements
-        if: ${{ matrix.os == 'macOs-latest' }}
+        if: ${{ matrix.os == 'macOS-latest' }}
         run: brew install graphviz ninja doxygen 
       - name: Configure
         run: cmake -B build -S .
       - name: Build
         run: cmake --build build
       - name: Build Documentation
-        if: ${{ matrix.os == 'macOs-latest' }}
+        if: ${{ matrix.os == 'macOS-latest' }}
         run: |
           cmake --build build -t doc 
           cp -r build/html/* docs/
       - name: Commit Documentation 
-        if: ${{ matrix.os == 'macOs-latest' }}
+        if: ${{ matrix.os == 'macOS-latest' }}
         run: |
           git config --global user.name github-actions
           git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
