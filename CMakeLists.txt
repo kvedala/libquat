@@ -29,16 +29,17 @@ set(SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_internal.c
 )
 
-# if(BUILD_STATIC_LIBS)
+add_compile_definitions(BUILDING_LIBQUAT)
+if(BUILD_STATIC_LIBS)
 	set(LIBTYPE STATIC)
-# else ()
-# 	set(LIBTYPE SHARED)
-# 	if (WIN32)
-# 		configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/src/version.rc.in
-#                 ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc @ONLY)
-# 		set (SOURCE_FILES ${SOURCE_FILES} ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc)
-#     endif()
-# endif()
+else ()
+	set(LIBTYPE SHARED)
+	if (WIN32)
+		configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/src/version.rc.in
+                ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc @ONLY)
+		set (SOURCE_FILES ${SOURCE_FILES} ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc)
+    endif()
+endif()
 
 cmake_policy(SET CMP0042 NEW)
 add_library (libquat ${LIBTYPE} ${SOURCE_FILES})
