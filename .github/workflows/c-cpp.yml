@@ -118,5 +118,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - run: cmake -B build -S .
-      - run: cmake --build build
+      - name: Configure
+        run: cmake -B build -S .
+      - name: Build
+        run: cmake --build build
+      - name: Documentation
+        if: ${{ os == macOS }}
+        run: |
+        brew install graphviz ninja doxygen 
+        cmake --build build -t doc 
+        cp -r build/html/* doc/
+      - name: Commit Documentation 
+        if: ${{ os == macOS }}
+        run: |
+          git config --global user.name github-actions
+          git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git add doc/
+          git commit -m "update documentation for ${GITHUB_SHA::8}" || true
+          git push || true
