@@ -123,13 +123,13 @@ jobs:
       - name: Build
         run: cmake --build build
       - name: Documentation
-        if: ${{ os == macOS }}
+        if: ${{ matrix.os == 'macOs-latest' }}
         run: |
           brew install graphviz ninja doxygen 
           cmake --build build -t doc 
           cp -r build/html/* doc/
       - name: Commit Documentation 
-        if: ${{ os == macOS }}
+        if: ${{ matrix.os == 'macOs-latest' }}
         run: |
           git config --global user.name github-actions
           git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
