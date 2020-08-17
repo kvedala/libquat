@@ -23,6 +23,10 @@ extern "C"
     /**< internal variable to keep a track of version validity */
     extern char is_libquat_valid;
 
+    // #define err_msg(...) print_err()
+
+    // void print_err(const char *fmt, ...);
+
 #ifdef __cplusplus
 }
 #endif
