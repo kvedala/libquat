@@ -48,19 +48,6 @@ extern "C"
     /** @} */
 
     /**
-     * @addtogroup matrix Matrix operations
-     * @{
-     */
-    /** A 3x3 Matrix type definition */
-    typedef struct mat_3x3_
-    {
-        float row1[3]; /**< 3 element row 1 */
-        float row2[3]; /**< 3 element row 2 */
-        float row3[3]; /**< 3 element row 3 */
-    } mat_3x3;
-    /** @} */
-
-    /**
      * @addtogroup vec_3d 3D Vector operations
      * @{
      */
@@ -71,7 +58,34 @@ extern "C"
         float y; /**< Y co-ordinate */
         float z; /**< Z co-ordinate */
     } vec_3d;
+    /** @} */
 
+    /**
+     * @addtogroup matrix Matrix operations
+     * @{
+     */
+    /** A 3x3 Matrix type definition */
+    typedef struct mat_3x3_
+    {
+        union { /**< 3 element row 1 */
+            float row1[3];
+            vec_3d vec1;
+        };
+        union { /**< 3 element row 2 */
+            float row2[3];
+            vec_3d vec2;
+        };
+        union { /**< 3 element row 3 */
+            float row3[3];
+            vec_3d vec3;
+        };
+    } mat_3x3;
+    /** @} */
+
+    /**
+     * @addtogroup vec_3d 3D Vector operations
+     * @{
+     */
     /**
      * Obtain the dot product of two 3D vectors.
      * @f[
@@ -168,9 +182,14 @@ extern "C"
      */
     typedef struct quaternion_
     {
-        float w; /**< real part of quaternion */
-        union {  /**< dual part of quaternion also a 3D vector */
-            vec_3d dual;
+        union {
+            float w;  /**< real part of quaternion */
+            float q0; /**< real part of quaternion */
+        };
+        /**< dual part of quaternion */
+        union {
+            vec_3d dual; /**< can be a 3D vector */
+            /** or individual values */
             struct
             {
                 float q1, q2, q3;
@@ -181,10 +200,20 @@ extern "C"
     /** 3D Euler or Tait-Bryan angles (in radian) */
     typedef struct euler_
     {
-        float roll;    /**< or bank \f$\phi\f$ = rotation about X axis */
-        float pitch;   /**< or elevation \f$\theta\f$ = rotation about Y axis */
-        float yaw;     /**< or elevation \f$\psi\f$ = rotation about Z axis */
-        float heading; /**< \f$\alpha\f$ Angle between X & magnetic north */
+        union {
+            float roll; /**< or bank \f$\phi\f$ = rotation about X axis */
+            float bank; /**< or roll \f$\phi\f$ = rotation about X axis */
+        };
+        union {
+            float
+                pitch; /**< or elevation \f$\theta\f$ = rotation about Y axis */
+            float
+                elevation; /**< or pitch \f$\theta\f$ = rotation about Y axis */
+        };
+        union {
+            float yaw;     /**< or heading \f$\psi\f$ = rotation about Z axis */
+            float heading; /**< or yaw \f$\psi\f$ = rotation about Z axis */
+        };
     } euler;
 
     /**
@@ -210,8 +239,9 @@ extern "C"
      *
      * @param [in] in_euler input Euler angles instance
      * @param [out] out_quat output quaternion instance
+     * @returns converted quaternion
      */
-    void quat_from_euler(const euler *in_euler, quaternion *out_quat);
+    quaternion quat_from_euler(const euler *in_euler, quaternion *out_quat);
 
     /**
      * Function to convert given quaternion to Euler angles.
@@ -226,8 +256,9 @@ extern "C"
      *
      * @param [in] in_quat input quaternion instance
      * @param [out] out_euler output Euler angles instance
+     * @returns converted euler angles
      */
-    void euler_from_quat(const quaternion *in_quat, euler *out_euler);
+    euler euler_from_quat(const quaternion *in_quat, euler *out_euler);
 
     /**
      * Function to multiply two quaternions.
@@ -247,10 +278,12 @@ extern "C"
      *
      * @param [in] in_quat1 first input quaternion instance
      * @param [in] in_quat2 second input quaternion instance
-     * @param [out] out_quat output quaternion instance
+     * @param [out] out_quat output quaternion instance, can be NULL
+     * @returns resultant quaternion
      */
-    void quaternion_multiply(const quaternion *in_quat1,
-                             const quaternion *in_quat2, quaternion *out_quat);
+    quaternion quaternion_multiply(const quaternion *in_quat1,
+                                   const quaternion *in_quat2,
+                                   quaternion *out_quat);
 
     /** @} */
 
