@@ -12,7 +12,7 @@ jobs:
       - name: requirements
         run: |
           sudo apt -qq -y update
-          sudo apt -qq install clang-tidy-10
+          sudo apt -qq install clang-tidy-10 clang-format-10
         # checks are passing with less errors when used with this version.
         # The default installs v6.0 which did not work out well in my tests
       - name: Setup Git Specs
@@ -118,14 +118,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
+      - name: Documentation Requirements
+        if: ${{ matrix.os == 'macOs-latest' }}
+        run: brew install graphviz ninja doxygen 
       - name: Configure
         run: cmake -B build -S .
       - name: Build
         run: cmake --build build
-      - name: Documentation
+      - name: Build Documentation
         if: ${{ matrix.os == 'macOs-latest' }}
         run: |
-          brew install graphviz ninja doxygen 
           cmake --build build -t doc 
           cp -r build/html/* doc/
       - name: Commit Documentation 
