@@ -1,15 +1,21 @@
 /**
-  @file
-  @brief Simple program to test the different aspects of `libquat` library.
-  @author Krishna Vedala
-*/
+ * @file
+ * @brief Simple program in C++ to test the different aspects of `libquat`
+ * library.
+ * @author Krishna Vedala
+ */
 
-#include "libquat.h"
+#include "../include/libquat.h"
 #include <cmath>
 #include <iostream>
 #include <cassert>
 
-int main(void)
+/**
+ * @brief Test program in C++
+ *
+ * @return int
+ */
+auto main() -> int
 {
     vec_3d a = {1.f, 2.f, 3.f};
     vec_3d b = {1.f, 1.f, 1.f};

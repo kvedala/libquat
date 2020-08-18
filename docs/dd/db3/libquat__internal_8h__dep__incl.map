@@ -1,0 +1,7 @@
+<map id="src/libquat_internal.h" name="src/libquat_internal.h">
+<area shape="rect" id="node1" title="API functions to handle library errors." alt="" coords="223,5,366,32"/>
+<area shape="rect" id="node2" href="$dd/dc7/libquat__err_8c.html" title="API functions to handle library errors." alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$da/d4a/libquat__internal_8c.html" title="API functions to handle library errors." alt="" coords="145,80,287,107"/>
+<area shape="rect" id="node4" href="$d8/d4a/libquat__quat_8c.html" title="API Functions related to 3D Quaternion operations." alt="" coords="312,80,437,107"/>
+<area shape="rect" id="node5" href="$d2/dd2/libquat__vec_8c.html" title="API Functions related to 3D vector operations." alt="" coords="462,80,583,107"/>
+</map>

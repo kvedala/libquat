@@ -11,8 +11,8 @@ jobs:
       - uses: actions/setup-python@v2
       - name: requirements
         run: |
-          sudo apt -qq -y update
-          sudo apt -qq install clang-tidy-10
+          # sudo apt -qq -y update
+          sudo apt -qq install clang-tidy-10 clang-format-10
         # checks are passing with less errors when used with this version.
         # The default installs v6.0 which did not work out well in my tests
       - name: Setup Git Specs
@@ -40,7 +40,7 @@ jobs:
               git "mv" "${fname}" ${new_fname}
             fi
           done
-          git commit -am "formatting filenames $GITHUB_SHA" ||  true
+          git commit -am "formatting filenames ${GITHUB_SHA::8}" ||  true
 
       - name: Get file changes
         run: |
@@ -72,7 +72,7 @@ jobs:
           if not cpp_files:
             sys.exit(0)
 
-          subprocess.run(["clang-tidy-10", "--fix", "-p=build", "--extra-arg=-std=c++11", *cpp_files, "--"],
+          subprocess.run(["clang-tidy-10", "--fix", "-p=build", *cpp_files, "--"],
               check=True, text=True, stderr=subprocess.STDOUT)
 
           # for cpp_file in cpp_files:
@@ -105,7 +105,7 @@ jobs:
             sys.exit(bad_files)
       - name: Commit and push changes
         run: |
-          git commit -am "clang-tidy fixes for $GITHUB_SHA" ||  true
+          git commit -am "clang-tidy fixes for ${GITHUB_SHA::8}" ||  true
           git push --force origin HEAD:$GITHUB_REF || true
 
   build:
@@ -118,5 +118,24 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - run: cmake -B build -S .
-      - run: cmake --build build
+      - name: Documentation Requirements
+        if: ${{ matrix.os == 'macOS-latest' }}
+        run: brew install graphviz ninja doxygen 
+      - name: Configure
+        run: cmake -B build -S .
+      - name: Build
+        run: cmake --build build
+      - name: Build Documentation
+        if: ${{ matrix.os == 'macOS-latest' }}
+        run: |
+          cmake --build build -t doc 
+          cp -r build/html/* docs/
+      - name: Commit Documentation 
+        if: ${{ matrix.os == 'macOS-latest' }}
+        run: |
+          git config --global user.name github-actions
+          git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git add docs/
+          git commit -m "update documentation for ${GITHUB_SHA::8}" || true
+          git push || true
