@@ -11,8 +11,8 @@ BEGIN
   BEGIN BLOCK "040904E4" /* Language type = U.S English(0x0409) and Character Set = Windows, Multilingual(0x04E4) */
     BEGIN
 /*      VALUE "Comments", PNG_LIBPNG_VERSIONINFO_COMMENTS "\000" */
-      VALUE "CompanyName", "Golden Era\000"
-      VALUE "FileDescription", "3D geometry algebra library\000"
+      VALUE "CompanyName", "Vedala Holdings, Inc.\000"
+      VALUE "FileDescription", "3D vectors and quaternion geometry library\000"
       VALUE "FileVersion", "@LIBQUAT_VERSION_MAJOR@.@LIBQUAT_VERSION_MINOR@\000"
 /*      VALUE "InternalName", "\000" */
       VALUE "LegalCopyright", "\251 2015 Krishna Vedala\000"

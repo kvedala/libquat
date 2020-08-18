@@ -43,9 +43,9 @@ else ()
 	set(LIBTYPE SHARED)
 	if (WIN32)
 		configure_file( src/version.rc.in
-                        src/version.rc @ONLY
+                        ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc @ONLY
         )
-		set (SOURCE_FILES ${SOURCE_FILES} src/version.rc)
+		set (SOURCE_FILES ${SOURCE_FILES} ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc)
     endif()
 endif()
 
@@ -124,3 +124,6 @@ if(BUILD_DOCUMENTATION)
         )
     endif()
 endif()
+
+include(CPack)
+
