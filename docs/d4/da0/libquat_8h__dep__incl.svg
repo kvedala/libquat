@@ -127,7 +127,7 @@ var sectionId = 'dynsection-0';
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d8/db9/test_8c.html" target="_top" xlink:title="Simple program to test the different aspects of libquat library.">
+<g id="a_node6"><a xlink:href="../../d8/db9/test_8c.html" target="_top" xlink:title="Simple program in C to test the different aspects of libquat library.">
 <polygon fill="white" stroke="black" points="452,-0.5 452,-19.5 518,-19.5 518,-0.5 452,-0.5"/>
 <text text-anchor="middle" x="485" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">tests/test.c</text>
 </a>
@@ -142,7 +142,7 @@ var sectionId = 'dynsection-0';
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="../../df/dac/test_8cpp.html" target="_top" xlink:title="Simple program to test the different aspects of libquat library.">
+<g id="a_node7"><a xlink:href="../../df/dac/test_8cpp.html" target="_top" xlink:title="Simple program in C++ to test the different aspects of libquat library.">
 <polygon fill="white" stroke="black" points="536.5,-0.5 536.5,-19.5 613.5,-19.5 613.5,-0.5 536.5,-0.5"/>
 <text text-anchor="middle" x="575" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">tests/test.cpp</text>
 </a>
