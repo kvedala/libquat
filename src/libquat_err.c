@@ -26,8 +26,9 @@ const char *err_to_str(libquat_err err_code) {
 }
 
 libquat_err libquat_version_check(const char major_ver) {
-    if (is_libquat_valid)
+    if (is_libquat_valid) {
         return LIBQUAT_OK;
+    }
 
     if (libquat_major_ver != major_ver) {
         return LIBQUAT_BAD_VERSION;
