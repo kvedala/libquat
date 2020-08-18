@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="../../dc/d9a/group__quats.html#ga1afd165100e9b02b86e3bd11b50f3b06" target="_top" xlink:title="Function to convert given quaternion to Euler angles.">
+<g id="a_node2"><a xlink:href="../../dc/d9a/group__quats.html#ga55579c9d0dab6fef004bf64d9de349dd" target="_top" xlink:title="Function to convert given quaternion to Euler angles.">
 <polygon fill="white" stroke="black" points="81.5,-114.5 81.5,-133.5 167.5,-133.5 167.5,-114.5 81.5,-114.5"/>
 <text text-anchor="middle" x="124.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">euler_from_quat</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="../../de/d7b/group__vec__3d.html#ga7b0f47124722e82c0f646d4627833b1f" target="_top" xlink:title="Print formatted vector on stdout.">
+<g id="a_node3"><a xlink:href="../../de/d7b/group__vec__3d.html#gaceaaa3044eb18a037ceba0a792ac1b2d" target="_top" xlink:title="Print formatted vector on stdout.">
 <polygon fill="white" stroke="black" points="90.5,-76.5 90.5,-95.5 158.5,-95.5 158.5,-76.5 90.5,-76.5"/>
 <text text-anchor="middle" x="124.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">print_vector</text>
 </a>
@@ -51,7 +51,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="../../dc/d9a/group__quats.html#ga4779f448daaf806ce5e750c13b3e0965" target="_top" xlink:title="Function to convert given Euler angles to a quaternion.">
+<g id="a_node4"><a xlink:href="../../dc/d9a/group__quats.html#ga4106f2538c634121520ceaf300255d2f" target="_top" xlink:title="Function to convert given Euler angles to a quaternion.">
 <polygon fill="white" stroke="black" points="81.5,-38.5 81.5,-57.5 167.5,-57.5 167.5,-38.5 81.5,-38.5"/>
 <text text-anchor="middle" x="124.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">quat_from_euler</text>
 </a>
@@ -66,7 +66,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="../../dc/d9a/group__quats.html#gaf5ad0f9c4f0facc5a9c3735a178156b1" target="_top" xlink:title="Function to multiply two quaternions.">
+<g id="a_node5"><a xlink:href="../../dc/d9a/group__quats.html#ga11f261987d3bfd7423193c263fc0f20d" target="_top" xlink:title="Function to multiply two quaternions.">
 <polygon fill="white" stroke="black" points="74,-0.5 74,-19.5 175,-19.5 175,-0.5 74,-0.5"/>
 <text text-anchor="middle" x="124.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">quaternion_multiply</text>
 </a>

@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="../../de/d7b/group__vec__3d.html#ga243e74d542d0d4d14fa3ae0bc2170d84" target="_top" xlink:title="Obtain the dot product of two 3D vectors.">
+<g id="a_node2"><a xlink:href="../../de/d7b/group__vec__3d.html#ga80211fcd9720e39f842c74082e1d176c" target="_top" xlink:title="Obtain the dot product of two 3D vectors.">
 <polygon fill="white" stroke="black" points="82.5,-114.5 82.5,-133.5 136.5,-133.5 136.5,-114.5 82.5,-114.5"/>
 <text text-anchor="middle" x="109.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">dot_prod</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="../../de/d7b/group__vec__3d.html#ga7b0f47124722e82c0f646d4627833b1f" target="_top" xlink:title="Print formatted vector on stdout.">
+<g id="a_node3"><a xlink:href="../../de/d7b/group__vec__3d.html#gaceaaa3044eb18a037ceba0a792ac1b2d" target="_top" xlink:title="Print formatted vector on stdout.">
 <polygon fill="white" stroke="black" points="75.5,-76.5 75.5,-95.5 143.5,-95.5 143.5,-76.5 75.5,-76.5"/>
 <text text-anchor="middle" x="109.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">print_vector</text>
 </a>
@@ -51,7 +51,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="../../de/d7b/group__vec__3d.html#ga94805165d037d111d7d7c0df99e3a5de" target="_top" xlink:title="Compute the norm a vector.">
+<g id="a_node4"><a xlink:href="../../de/d7b/group__vec__3d.html#ga2222d35fc8430067d3a56f9f987a817e" target="_top" xlink:title="Compute the norm a vector.">
 <polygon fill="white" stroke="black" points="74,-38.5 74,-57.5 145,-57.5 145,-38.5 74,-38.5"/>
 <text text-anchor="middle" x="109.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">vector_norm</text>
 </a>
@@ -66,7 +66,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="../../de/d7b/group__vec__3d.html#gae4a49e6bdf13df949e8b23c7925bb5f5" target="_top" xlink:title="Compute the vector product of two 3d vectors.">
+<g id="a_node5"><a xlink:href="../../de/d7b/group__vec__3d.html#ga400d05b43d95a64e4adb3b5c18d941c7" target="_top" xlink:title="Compute the vector product of two 3d vectors.">
 <polygon fill="white" stroke="black" points="75.5,-0.5 75.5,-19.5 143.5,-19.5 143.5,-0.5 75.5,-0.5"/>
 <text text-anchor="middle" x="109.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">vector_prod</text>
 </a>

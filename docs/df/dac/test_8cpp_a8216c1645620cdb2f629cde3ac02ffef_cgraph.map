@@ -1,7 +1,7 @@
 <map id="main" name="main">
 <area shape="rect" id="node1" title="Test program in C++." alt="" coords="5,81,56,108"/>
-<area shape="rect" id="node2" href="$dc/d9a/group__quats.html#ga1afd165100e9b02b86e3bd11b50f3b06" title="Function to convert given quaternion to Euler angles." alt="" coords="114,5,229,32"/>
-<area shape="rect" id="node3" href="$de/d7b/group__vec__3d.html#ga7b0f47124722e82c0f646d4627833b1f" title="Print formatted vector on stdout." alt="" coords="126,56,217,83"/>
-<area shape="rect" id="node4" href="$dc/d9a/group__quats.html#ga4779f448daaf806ce5e750c13b3e0965" title="Function to convert given Euler angles to a quaternion." alt="" coords="114,107,229,133"/>
-<area shape="rect" id="node5" href="$dc/d9a/group__quats.html#gaf5ad0f9c4f0facc5a9c3735a178156b1" title="Function to multiply two quaternions." alt="" coords="104,157,239,184"/>
+<area shape="rect" id="node2" href="$dc/d9a/group__quats.html#ga55579c9d0dab6fef004bf64d9de349dd" title="Function to convert given quaternion to Euler angles." alt="" coords="114,5,229,32"/>
+<area shape="rect" id="node3" href="$de/d7b/group__vec__3d.html#gaceaaa3044eb18a037ceba0a792ac1b2d" title="Print formatted vector on stdout." alt="" coords="126,56,217,83"/>
+<area shape="rect" id="node4" href="$dc/d9a/group__quats.html#ga4106f2538c634121520ceaf300255d2f" title="Function to convert given Euler angles to a quaternion." alt="" coords="114,107,229,133"/>
+<area shape="rect" id="node5" href="$dc/d9a/group__quats.html#ga11f261987d3bfd7423193c263fc0f20d" title="Function to multiply two quaternions." alt="" coords="104,157,239,184"/>
 </map>

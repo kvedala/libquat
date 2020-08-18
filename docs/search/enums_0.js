@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['libquat_5ferr_3322',['libquat_err',['../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db',1,'libquat.h']]]
+  ['libquat_5ferr_3323',['libquat_err',['../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db',1,'libquat.h']]]
 ];

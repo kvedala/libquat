@@ -18,9 +18,9 @@ var group__quats =
     ] ],
     [ "euler", "dc/d9a/group__quats.html#ga8cc5e5b7a5fa492423ecf034c8bb52bd", null ],
     [ "quaternion", "dc/d9a/group__quats.html#gaacd70a16b61dd47a19eb5fb729c2669b", null ],
-    [ "euler_from_quat", "dc/d9a/group__quats.html#ga1afd165100e9b02b86e3bd11b50f3b06", null ],
-    [ "quat_from_euler", "dc/d9a/group__quats.html#ga4779f448daaf806ce5e750c13b3e0965", null ],
-    [ "quaternion_add", "dc/d9a/group__quats.html#gac2fb165ad8e3dca8f3ee907050c0ddac", null ],
-    [ "quaternion_multiply", "dc/d9a/group__quats.html#gaf5ad0f9c4f0facc5a9c3735a178156b1", null ],
-    [ "quaternion_sub", "dc/d9a/group__quats.html#ga24f49c5bf2026f2ea96ba9a338f11c57", null ]
+    [ "euler_from_quat", "dc/d9a/group__quats.html#ga55579c9d0dab6fef004bf64d9de349dd", null ],
+    [ "quat_from_euler", "dc/d9a/group__quats.html#ga4106f2538c634121520ceaf300255d2f", null ],
+    [ "quaternion_add", "dc/d9a/group__quats.html#gab2ac584291e13eaa85d0b8a5e757858a", null ],
+    [ "quaternion_multiply", "dc/d9a/group__quats.html#ga11f261987d3bfd7423193c263fc0f20d", null ],
+    [ "quaternion_sub", "dc/d9a/group__quats.html#ga4a0c58a3ef55ef4de818e38dd347f7f3", null ]
 ];
