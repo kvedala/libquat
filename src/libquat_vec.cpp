@@ -87,8 +87,8 @@ float dot_prod(const vec_3d *a, const vec_3d *b) { return *a * *b; }
 
 vec_3d operator^(const vec_3d &a, const vec_3d &b)
 {
-    vec_3d out;  // better this way to avoid copying results to input vectors
-                 // themselves
+    vec_3d out{0.f};  // better this way to avoid copying results to input
+                      // vectors themselves
     out.x = a.y * b.z - a.z * b.y;
     out.y = -a.x * b.z + a.z * b.x;
     out.z = a.x * b.y - a.y * b.x;
@@ -116,7 +116,7 @@ std::ostream &operator<<(std::ostream &out, vec_3d const &v)
 
 const char *print_vector(const vec_3d *a, const char *name)
 {
-    static char vec_str[100];
+    static char vec_str[100];  // NOLINT
     snprintf(vec_str, 99, "vec(%s) = (%.3g)i + (%.3g)j + (%.3g)k\n", name, a->x,
              a->y, a->z);
     return vec_str;

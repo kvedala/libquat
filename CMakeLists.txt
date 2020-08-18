@@ -10,10 +10,10 @@ set (CMAKE_BUILD_TYPE RelWithDebInfo)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_VERBOSE_MAKEFILE ON)
+# set(CMAKE_VERBOSE_MAKEFILE ON)
 # set(CMAKE_CXX_CLANG_TIDY clang-tidy --fix --fix-errors)
 
 # set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
@@ -23,7 +23,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 # option (BUILD_SHARED_LIBS "Build the libquat library shared." ON)
 # option (BUILD_STATIC_LIBS "Build the libquat library static." ON)
 
-include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories (AFTER "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 add_compile_definitions(LIBQUAT_MAJOR_VER=${LIBQUAT_VERSION_MAJOR})
 add_compile_definitions(LIBQUAT_MINOR_VER=${LIBQUAT_VERSION_MINOR})
@@ -55,10 +55,10 @@ add_library (libquat ${LIBTYPE} ${SOURCE_FILES})
 
 target_include_directories(libquat BEFORE PUBLIC ${CMAKE_CURRENT_BUILD_DIR}/include)
 set_target_properties(libquat PROPERTIES
-    LINKER_LANGUAGE C
     VERSION ${LIBQUAT_VERSION_MAJOR}.${LIBQUAT_VERSION_MINOR}
     SOVERSION ${LIBQUAT_VERSION_MAJOR}
-    CLEAN_DIRECT_OUTPUT 1)
+    INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/include"
+)
 
 find_library(M_LIBRARY m)
 
