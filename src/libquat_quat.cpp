@@ -13,8 +13,7 @@
 #include <cmath>
 #endif
 
-quaternion quat_from_euler(const euler *in_euler)
-{
+quaternion quat_from_euler(const euler *in_euler) {
     quaternion temp = {0.f};
 
     if (!in_euler)  // if null
@@ -38,8 +37,7 @@ quaternion quat_from_euler(const euler *in_euler)
     return temp;
 }
 
-euler euler_from_quat(const quaternion *in_quat)
-{
+euler euler_from_quat(const quaternion *in_quat) {
     euler temp = {0.f};
 
     if (!in_quat)  // if null
@@ -60,25 +58,23 @@ euler euler_from_quat(const quaternion *in_quat)
     return temp;
 }
 
-quaternion operator*(const quaternion &in_quat1, const quaternion &in_quat2)
-{
+quaternion operator*(const quaternion &in_quat1, const quaternion &in_quat2) {
     quaternion temp = {0.f};
 
-    temp.w = in_quat1->w * in_quat2->w - in_quat1->q1 * in_quat2->q1 -
-             in_quat1->q2 * in_quat2->q2 - in_quat1->q3 * in_quat2->q3;
-    temp.q1 = in_quat1->w * in_quat2->q1 + in_quat1->q1 * in_quat2->w +
-              in_quat1->q2 * in_quat2->q3 - in_quat1->q3 * in_quat2->q2;
-    temp.q2 = in_quat1->w * in_quat2->q2 - in_quat1->q1 * in_quat2->q3 +
-              in_quat1->q2 * in_quat2->w + in_quat1->q3 * in_quat2->q1;
-    temp.q3 = in_quat1->w * in_quat2->q3 + in_quat1->q1 * in_quat2->q2 -
-              in_quat1->q2 * in_quat2->q1 + in_quat1->q3 * in_quat2->w;
+    temp.w = in_quat1.w * in_quat2.w - in_quat1.q1 * in_quat2.q1 -
+             in_quat1.q2 * in_quat2.q2 - in_quat1.q3 * in_quat2.q3;
+    temp.q1 = in_quat1.w * in_quat2.q1 + in_quat1.q1 * in_quat2.w +
+              in_quat1.q2 * in_quat2.q3 - in_quat1.q3 * in_quat2.q2;
+    temp.q2 = in_quat1.w * in_quat2.q2 - in_quat1.q1 * in_quat2.q3 +
+              in_quat1.q2 * in_quat2.w + in_quat1.q3 * in_quat2.q1;
+    temp.q3 = in_quat1.w * in_quat2.q3 + in_quat1.q1 * in_quat2.q2 -
+              in_quat1.q2 * in_quat2.q1 + in_quat1.q3 * in_quat2.w;
 
     return temp;
 }
 
 quaternion quaternion_multiply(const quaternion *in_quat1,
-                               const quaternion *in_quat2)
-{
+                               const quaternion *in_quat2) {
     if (!in_quat1 || !in_quat2)  // if null
     {
         fprintf(stderr, "%s: Invalid input.", __func__);
@@ -88,8 +84,27 @@ quaternion quaternion_multiply(const quaternion *in_quat1,
     return *in_quat1 + *in_quat2;
 }
 
-quaternion operator+(const quaternion &in_quat1, const quaternion &in_quat2)
-{
+quaternion operator!(const quaternion &in_quat1) {
+    quaternion temp = {0.f};
+
+    temp.w = in_quat1.w;
+    temp.q1 = -in_quat1.q1;
+    temp.q2 = -in_quat1.q2;
+    temp.q3 = -in_quat1.q3;
+
+    return temp;
+}
+
+quaternion get_conjugate(const quaternion *in_quat1) {
+    if (!in_quat1) {
+        fprintf(stderr, "%s: Invalid input.", __func__);
+        return {0.f};
+    }
+
+    return !(*in_quat1);
+}
+
+quaternion operator+(const quaternion &in_quat1, const quaternion &in_quat2) {
     quaternion temp = {0.f};
 
     temp.w = in_quat1.w + in_quat2.w;
@@ -99,8 +114,7 @@ quaternion operator+(const quaternion &in_quat1, const quaternion &in_quat2)
 }
 
 quaternion quaternion_add(const quaternion *in_quat1,
-                          const quaternion *in_quat2)
-{
+                          const quaternion *in_quat2) {
     if (!in_quat1 || !in_quat2)  // if null
     {
         std::cerr << __func__ << ": Invalid input.";
@@ -110,8 +124,7 @@ quaternion quaternion_add(const quaternion *in_quat1,
     return *in_quat1 + *in_quat2;
 }
 
-quaternion operator-(const quaternion &in_quat1, const quaternion &in_quat2)
-{
+quaternion operator-(const quaternion &in_quat1, const quaternion &in_quat2) {
     quaternion temp = {0.f};
 
     temp.w = in_quat1.w - in_quat2.w;
@@ -121,8 +134,7 @@ quaternion operator-(const quaternion &in_quat1, const quaternion &in_quat2)
 }
 
 quaternion quaternion_sub(const quaternion *in_quat1,
-                          const quaternion *in_quat2)
-{
+                          const quaternion *in_quat2) {
     if (!in_quat1 || !in_quat2)  // if null
     {
         std::cerr << __func__ << ": Invalid input.";
