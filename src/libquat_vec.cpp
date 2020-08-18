@@ -117,8 +117,8 @@ std::ostream &operator<<(std::ostream &out, vec_3d const &v)
 const char *print_vector(const vec_3d *a, const char *name)
 {
     static char vec_str[100];  // NOLINT
-    snprintf(vec_str, 99, "vec(%s) = (%.3g)i + (%.3g)j + (%.3g)k\n", name, a->x,
-             a->y, a->z);
+    snprintf(vec_str, 99,      // NOLINT
+             "vec(%s) = (%.3g)i + (%.3g)j + (%.3g)k\n", name, a->x, a->y, a->z);
     return vec_str;
 }
 
