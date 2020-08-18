@@ -72,7 +72,7 @@ jobs:
           if not cpp_files:
             sys.exit(0)
 
-          subprocess.run(["clang-tidy-10", "--fix", "-p=build", *cpp_files, "--"],
+          subprocess.run(["clang-tidy-10", "--fix", "-p=build", "--extra-arg=-Iinclude", "--extra-arg=-DLIBQUAT_MAJOR_VER=0", "--extra-arg=-DLIBQUAT_MINOR_VER=0", *cpp_files, "--"],
               check=True, text=True, stderr=subprocess.STDOUT)
 
           # for cpp_file in cpp_files:
@@ -120,7 +120,7 @@ jobs:
       - uses: actions/checkout@master
       - name: Documentation Requirements
         if: ${{ matrix.os == 'macOS-latest' }}
-        run: brew install graphviz ninja doxygen 
+        run: brew install graphviz ninja doxygen
       - name: Configure
         run: cmake -B build -S .
       - name: Build
@@ -128,9 +128,9 @@ jobs:
       - name: Build Documentation
         if: ${{ matrix.os == 'macOS-latest' }}
         run: |
-          cmake --build build -t doc 
+          cmake --build build -t doc
           cp -r build/html/* docs/
-      - name: Commit Documentation 
+      - name: Commit Documentation
         if: ${{ matrix.os == 'macOS-latest' }}
         run: |
           git config --global user.name github-actions

@@ -9,7 +9,9 @@ var indexSectionsWithContent =
   6: "demqv",
   7: "l",
   8: "l",
-  9: "3elm"
+  9: "l",
+  10: "3elm",
+  11: "l"
 };
 
 var indexSectionNames =
@@ -23,7 +25,9 @@ var indexSectionNames =
   6: "typedefs",
   7: "enums",
   8: "enumvalues",
-  9: "groups"
+  9: "defines",
+  10: "groups",
+  11: "pages"
 };
 
 var indexSectionLabels =
@@ -37,6 +41,8 @@ var indexSectionLabels =
   6: "Typedefs",
   7: "Enumerations",
   8: "Enumerator",
-  9: "Modules"
+  9: "Macros",
+  10: "Modules",
+  11: "Pages"
 };
 

@@ -1,9 +1,7 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title="Test program in C++." alt="" coords="5,109,56,136"/>
-<area shape="rect" id="node2" href="$de/d7b/group__vec__3d.html#gae6fb2fcf3e48f82c5ffe03bdf5539407" title="Obtain the dot product of two 3D vectors." alt="" coords="267,84,339,111"/>
-<area shape="rect" id="node3" href="$dc/d9a/group__quats.html#ga3bda60984b9232793c3b041006b471b0" title="Function to convert given quaternion to Euler angles." alt="" coords="104,33,219,60"/>
-<area shape="rect" id="node4" href="$de/d7b/group__vec__3d.html#ga7b0f47124722e82c0f646d4627833b1f" title="Print formatted vector on stdout." alt="" coords="116,84,207,111"/>
-<area shape="rect" id="node5" href="$dc/d9a/group__quats.html#gad442a6a5cdd655e2b13d72f73c43d4f9" title="Function to convert given Euler angles to a quaternion." alt="" coords="104,135,219,161"/>
-<area shape="rect" id="node6" href="$de/d7b/group__vec__3d.html#ga784b31d4756d5e0cbe69e182c7b9c840" title="Compute the norm a vector." alt="" coords="114,185,209,212"/>
-<area shape="rect" id="node7" href="$de/d7b/group__vec__3d.html#ga8067d70e877568a2a4df5c2a9ffb4fa3" title="Compute the vector product of two 3d vectors." alt="" coords="116,236,207,263"/>
+<area shape="rect" id="node1" title="Test program in C++." alt="" coords="5,81,56,108"/>
+<area shape="rect" id="node2" href="$dc/d9a/group__quats.html#ga55579c9d0dab6fef004bf64d9de349dd" title="Function to convert given quaternion to Euler angles." alt="" coords="114,5,229,32"/>
+<area shape="rect" id="node3" href="$de/d7b/group__vec__3d.html#gaceaaa3044eb18a037ceba0a792ac1b2d" title="Print formatted vector on stdout." alt="" coords="126,56,217,83"/>
+<area shape="rect" id="node4" href="$dc/d9a/group__quats.html#ga4106f2538c634121520ceaf300255d2f" title="Function to convert given Euler angles to a quaternion." alt="" coords="114,107,229,133"/>
+<area shape="rect" id="node5" href="$dc/d9a/group__quats.html#ga11f261987d3bfd7423193c263fc0f20d" title="Function to multiply two quaternions." alt="" coords="104,157,239,184"/>
 </map>

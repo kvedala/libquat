@@ -26,6 +26,7 @@
             considered to be @f$=0@f$ */
 
 #ifdef __cplusplus
+#include <iostream>
 extern "C"
 {
 #endif
@@ -78,15 +79,18 @@ extern "C"
     /** A 3x3 Matrix type definition */
     typedef struct mat_3x3_
     {
-        union { /**< 3 element row 1 */
+        union
+        { /**< 3 element row 1 */
             float row1[3];
             vec_3d vec1;
         };
-        union { /**< 3 element row 2 */
+        union
+        { /**< 3 element row 2 */
             float row2[3];
             vec_3d vec2;
         };
-        union { /**< 3 element row 3 */
+        union
+        { /**< 3 element row 3 */
             float row3[3];
             vec_3d vec3;
         };
@@ -104,10 +108,9 @@ extern "C"
      * @f]
      * @param[in] a first vector
      * @param[in] b second vector
-     * @param[out] o resulting dot product
+     * @returns resulting dot product
      */
-    LIBQUAT_DLL_EXPORTED void dot_prod(const vec_3d *a, const vec_3d *b,
-                                       float *o);
+    LIBQUAT_DLL_EXPORTED float dot_prod(const vec_3d *a, const vec_3d *b);
 
     /**
      * Subtract one vector from another. @f[
@@ -115,10 +118,9 @@ extern "C"
      * \left(a_y-b_y\right)\hat{j}+\left(a_z-b_z\right)\hat{k}@f]
      * @param[in] a vector to subtract from
      * @param[in] b vector to subtract
-     * @param[out] out resultant vector
+     * @returns resultant vector
      */
-    LIBQUAT_DLL_EXPORTED void vector_sub(const vec_3d *a, const vec_3d *b,
-                                         vec_3d *out);
+    LIBQUAT_DLL_EXPORTED vec_3d vector_sub(const vec_3d *a, const vec_3d *b);
 
     /**
      * Add one vector to another. @f[
@@ -126,10 +128,9 @@ extern "C"
      * \left(a_y+b_y\right)\hat{j}+\left(a_z+b_z\right)\hat{k}@f]
      * @param[in] a vector to add to
      * @param[in] b vector to add
-     * @param[out] out resultant vector
+     * @returns resultant vector
      */
-    LIBQUAT_DLL_EXPORTED void vector_add(const vec_3d *a, const vec_3d *b,
-                                         vec_3d *out);
+    LIBQUAT_DLL_EXPORTED vec_3d vector_add(const vec_3d *a, const vec_3d *b);
 
     /**
      * Compute the vector product of two 3d vectors.
@@ -144,34 +145,34 @@ extern "C"
      * @f]
      * @param[in] a first vector @f$\vec{a}@f$
      * @param[in] b second vector @f$\vec{b}@f$
-     * @param[out] o resultant vector @f$\vec{o}=\vec{a}\times\vec{b}@f$
+     * @returns resultant vector @f$\vec{o}=\vec{a}\times\vec{b}@f$
      */
-    LIBQUAT_DLL_EXPORTED void vector_prod(const vec_3d *a, const vec_3d *b,
-                                          vec_3d *o);
+    LIBQUAT_DLL_EXPORTED vec_3d vector_prod(const vec_3d *a, const vec_3d *b);
 
     /**
      * Print formatted vector on stdout.
      * @param[in] a vector to print
      * @param[in] name  name of the vector
+     * @returns formatted vector for printing
      */
-    LIBQUAT_DLL_EXPORTED const char *print_vector(const vec_3d *a,
-                                                  const char *name);
+    LIBQUAT_DLL_EXPORTED LIBQUAT_DLL_EXPORTED const char *print_vector(
+        const vec_3d *a, const char *name);
 
     /**
      * Compute the norm a vector.
      * @f[\lVert\vec{a}\rVert = \sqrt{\vec{a}\cdot\vec{a}} @f]
      * @param[in] a input vector
-     * @param[out] n norm of the given vector
+     * @returns norm of the given vector
      */
-    LIBQUAT_DLL_EXPORTED void vector_norm(const vec_3d *a, float *n);
+    LIBQUAT_DLL_EXPORTED float vector_norm(const vec_3d *a);
 
     /**
      * Obtain unit vector in the same direction as given vector.
      * @f[\hat{a}=\frac{\vec{a}}{\lVert\vec{a}\rVert}@f]
      * @param[in] a input vector
-     * @param[out] a_hat unit vector in the direction of @f$\vec{a}@f$
+     * @returns unit vector in the direction of @f$\vec{a}@f$
      */
-    LIBQUAT_DLL_EXPORTED libquat_err unit_vec(const vec_3d *a, vec_3d *a_hat);
+    LIBQUAT_DLL_EXPORTED vec_3d unit_vec(const vec_3d *a);
 
     /**
      * The cross product of vectors can be represented as a matrix
@@ -183,10 +184,10 @@ extern "C"
      * \begin{bmatrix}0&-a_z&a_y\\a_z&0&-a_x\\-a_y&a_x&0\end{bmatrix}
      * \end{align*}@f]
      * @param[in] a input vector
-     * @param[out] A the `3x3` matrix for the cross product operator
+     * @returns the `3x3` matrix for the cross product operator
      * @f$\left(\vec{a}\times\right)@f$
      */
-    LIBQUAT_DLL_EXPORTED void get_cross_matrix(const vec_3d *a, mat_3x3 *A);
+    LIBQUAT_DLL_EXPORTED mat_3x3 get_cross_matrix(const vec_3d *a);
 
     /** @} */
 
@@ -198,12 +199,14 @@ extern "C"
      */
     typedef struct quaternion_
     {
-        union {
+        union
+        {
             float w;  /**< real part of quaternion */
             float q0; /**< real part of quaternion */
         };
         /**< dual part of quaternion */
-        union {
+        union
+        {
             vec_3d dual; /**< can be a 3D vector */
             /** or individual values */
             struct
@@ -216,17 +219,20 @@ extern "C"
     /** 3D Euler or Tait-Bryan angles (in radian) */
     typedef struct euler_
     {
-        union {
+        union
+        {
             float roll; /**< or bank \f$\phi\f$ = rotation about X axis */
             float bank; /**< or roll \f$\phi\f$ = rotation about X axis */
         };
-        union {
+        union
+        {
             float
                 pitch; /**< or elevation \f$\theta\f$ = rotation about Y axis */
             float
                 elevation; /**< or pitch \f$\theta\f$ = rotation about Y axis */
         };
-        union {
+        union
+        {
             float yaw;     /**< or heading \f$\psi\f$ = rotation about Z axis */
             float heading; /**< or yaw \f$\psi\f$ = rotation about Z axis */
         };
@@ -254,11 +260,9 @@ extern "C"
      * \f}
      *
      * @param [in] in_euler input Euler angles instance
-     * @param [out] out_quat output quaternion instance
      * @returns converted quaternion
      */
-    LIBQUAT_DLL_EXPORTED quaternion quat_from_euler(const euler *in_euler,
-                                                    quaternion *out_quat);
+    LIBQUAT_DLL_EXPORTED quaternion quat_from_euler(const euler *in_euler);
 
     /**
      * Function to convert given quaternion to Euler angles.
@@ -272,11 +276,9 @@ extern "C"
      * \f}
      *
      * @param [in] in_quat input quaternion instance
-     * @param [out] out_euler output Euler angles instance
      * @returns converted euler angles
      */
-    LIBQUAT_DLL_EXPORTED euler euler_from_quat(const quaternion *in_quat,
-                                               euler *out_euler);
+    LIBQUAT_DLL_EXPORTED euler euler_from_quat(const quaternion *in_quat);
 
     /**
      * Function to multiply two quaternions.
@@ -296,12 +298,30 @@ extern "C"
      *
      * @param [in] in_quat1 first input quaternion instance
      * @param [in] in_quat2 second input quaternion instance
-     * @param [out] out_quat output quaternion instance, can be NULL
      * @returns resultant quaternion
      */
     LIBQUAT_DLL_EXPORTED quaternion
-    quaternion_multiply(const quaternion *in_quat1, const quaternion *in_quat2,
-                        quaternion *out_quat);
+    quaternion_multiply(const quaternion *in_quat1, const quaternion *in_quat2);
+
+    /**
+     * Function to add two quaternions.
+     *
+     * @param [in] in_quat1 first input quaternion instance
+     * @param [in] in_quat2 second input quaternion instance
+     * @returns resultant quaternion
+     */
+    LIBQUAT_DLL_EXPORTED quaternion quaternion_add(const quaternion *in_quat1,
+                                                   const quaternion *in_quat2);
+
+    /**
+     * Function to subtract two quaternions.
+     *
+     * @param [in] in_quat1 first input quaternion instance
+     * @param [in] in_quat2 second input quaternion instance
+     * @returns resultant quaternion
+     */
+    LIBQUAT_DLL_EXPORTED quaternion quaternion_sub(const quaternion *in_quat1,
+                                                   const quaternion *in_quat2);
 
     /** @} */
 
@@ -319,6 +339,138 @@ extern "C"
 
 #ifdef __cplusplus
 }
+
+/**
+ * @addtogroup vec_3d 3D Vector operations
+ * @{
+ */
+
+/**
+ * Subtract one vector from another.
+ * @f[
+ * \vec{c}=\vec{a}-\vec{b}=\left(a_x-b_x\right)\hat{i}+
+ * \left(a_y-b_y\right)\hat{j}+\left(a_z-b_z\right)\hat{k}
+ * @f]
+ * @param[in] a vector to subtract from
+ * @param[in] b vector to subtract
+ * @returns resultant vector
+ */
+LIBQUAT_DLL_EXPORTED vec_3d operator-(const vec_3d &a, const vec_3d &b);
+
+/**
+ * Add one vector to another.
+ * @f[
+ * \vec{c}=\vec{a}-\vec{b}=\left(a_x-b_x\right)\hat{i}+
+ * \left(a_y-b_y\right)\hat{j}+\left(a_z-b_z\right)\hat{k}
+ * @f]
+ * @param[in] a first vector to add
+ * @param[in] b second vector to add
+ * @returns resultant vector
+ */
+LIBQUAT_DLL_EXPORTED vec_3d operator+(const vec_3d &a, const vec_3d &b);
+
+/**
+ * Obtain the dot product of two 3D vectors.
+ * @f[
+ * \vec{a}\cdot\vec{b}=a_xb_x + a_yb_y + a_zb_z
+ * @f]
+ * @param[in] a first vector
+ * @param[in] b second vector
+ * @returns resulting dot product
+ */
+LIBQUAT_DLL_EXPORTED float operator*(const vec_3d &a, const vec_3d &b);
+
+/**
+ * Scalar multiplication of a 3D vector.
+ * @f[
+ * \vec{a}\cdot\vec{b}=a\cdot b_x + a\cdot b_y + a\cdot b_z
+ * @f]
+ * @param[in] a pre-multiplying scalar
+ * @param[in] b second vector
+ * @returns resulting dot product
+ */
+LIBQUAT_DLL_EXPORTED vec_3d operator*(const float a, const vec_3d &b);
+
+/**
+ * Scalar multiplication of a 3D vector.
+ * @f[
+ * \vec{a}\cdot\vec{b}=a_x\cdot b + a_y\cdot b + a_z\cdot b
+ * @f]
+ * @param[in] a first vector
+ * @param[in] b post-multiplying scalar
+ * @returns resulting dot product
+ */
+LIBQUAT_DLL_EXPORTED vec_3d operator*(const vec_3d &a, const float b);
+
+/**
+ * Compute the vector product of two 3d vectors.
+ * @f[\begin{align*}
+ * \vec{a}\times\vec{b} &= \begin{vmatrix}
+ *  \hat{i} & \hat{j} & \hat{k}\\
+ *  a_x & a_y & a_z\\
+ *  b_x & b_y & b_z
+ *  \end{vmatrix}\\
+ *  &= \left(a_yb_z-b_ya_z\right)\hat{i} - \left(a_xb_z-b_xa_z\right)\hat{j}
+ * + \left(a_xb_y-b_xa_y\right)\hat{k} \end{align*}
+ * @f]
+ * @param[in] a first vector @f$\vec{a}@f$
+ * @param[in] b second vector @f$\vec{b}@f$
+ * @returns resultant vector @f$\vec{o}=\vec{a}\times\vec{b}@f$
+ */
+LIBQUAT_DLL_EXPORTED vec_3d operator^(const vec_3d &a, const vec_3d &b);
+
+/**
+ * Compute the norm a vector.
+ * @f[\lVert\vec{a}\rVert = \sqrt{\vec{a}\cdot\vec{a}} @f]
+ * @param[in] a input vector
+ * @returns n norm of the given vector
+ */
+LIBQUAT_DLL_EXPORTED float operator~(const vec_3d &a);
+
+/**
+ * operator to print a vec_3d instance.
+ * @param out std::ostream stream to print output to
+ * @param v vector to print
+ * @returns formatted stream
+ */
+LIBQUAT_DLL_EXPORTED std::ostream &operator<<(std::ostream &out,
+                                              vec_3d const &v);
+/**
+ * operator to print a vec_3d instance.
+ * @param out std::ostream stream to print output to
+ * @param v vector to print
+ * @returns formatted stream
+ */
+LIBQUAT_DLL_EXPORTED std::ostream &operator<<(std::ostream &out,
+                                              quaternion const &v);
+
+/** @} */
+
+/** @addtogroup quats 3D Quaternion operations
+ * @{
+ */
+
+/**
+ * Function to add two quaternions.
+ *
+ * @param [in] in_quat1 first input quaternion instance
+ * @param [in] in_quat2 second input quaternion instance
+ * @returns resultant quaternion
+ */
+LIBQUAT_DLL_EXPORTED quaternion operator+(const quaternion &in_quat1,
+                                          const quaternion &in_quat2);
+
+/**
+ * Function to subtract two quaternions.
+ *
+ * @param [in] in_quat1 quaternion to subtract from
+ * @param [in] in_quat2 quaternion to subtract
+ * @returns resultant quaternion
+ */
+LIBQUAT_DLL_EXPORTED quaternion operator-(const quaternion &in_quat1,
+                                          const quaternion &in_quat2);
+/** @} */
+
 #endif
 
 #endif  // __LIBQUAT_H_
