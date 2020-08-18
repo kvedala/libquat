@@ -1,7 +1,7 @@
 <map id="main" name="main">
 <area shape="rect" id="node1" title="Test program in C." alt="" coords="5,81,56,108"/>
-<area shape="rect" id="node2" href="$de/d7b/group__vec__3d.html#ga80211fcd9720e39f842c74082e1d176c" title="Obtain the dot product of two 3D vectors." alt="" coords="115,5,187,32"/>
-<area shape="rect" id="node3" href="$de/d7b/group__vec__3d.html#gaceaaa3044eb18a037ceba0a792ac1b2d" title="Print formatted vector on stdout." alt="" coords="106,56,197,83"/>
-<area shape="rect" id="node4" href="$de/d7b/group__vec__3d.html#ga2222d35fc8430067d3a56f9f987a817e" title="Compute the norm a vector." alt="" coords="104,107,199,133"/>
-<area shape="rect" id="node5" href="$de/d7b/group__vec__3d.html#ga400d05b43d95a64e4adb3b5c18d941c7" title="Compute the vector product of two 3d vectors." alt="" coords="106,157,197,184"/>
+<area shape="rect" id="node2" href="$de/d7b/group__vec__3d.html#ga80211fcd9720e39f842c74082e1d176c" title=" " alt="" coords="115,5,187,32"/>
+<area shape="rect" id="node3" href="$de/d7b/group__vec__3d.html#gaceaaa3044eb18a037ceba0a792ac1b2d" title=" " alt="" coords="106,56,197,83"/>
+<area shape="rect" id="node4" href="$de/d7b/group__vec__3d.html#ga2222d35fc8430067d3a56f9f987a817e" title=" " alt="" coords="104,107,199,133"/>
+<area shape="rect" id="node5" href="$de/d7b/group__vec__3d.html#ga400d05b43d95a64e4adb3b5c18d941c7" title=" " alt="" coords="106,157,197,184"/>
 </map>

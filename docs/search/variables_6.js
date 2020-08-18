@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['q0_3307',['q0',['../de/d58/structquaternion__.html#a37819eb7d76c65c37a9c2a63f01f65b2',1,'quaternion_']]]
+  ['pitch_3316',['pitch',['../d2/de8/structeuler__.html#aa71f9aa6dfa32d8014b2d54ab8410e0b',1,'euler_']]]
 ];
