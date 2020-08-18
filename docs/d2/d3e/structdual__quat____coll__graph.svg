@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="a dual quaternion type">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="black" points="1.5,-0.5 1.5,-19.5 65.5,-19.5 65.5,-0.5 1.5,-0.5"/>
 <text text-anchor="middle" x="33.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">dual_quat_</text>
 </a>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="../../de/d58/structquaternion__.html" target="_top" xlink:title="a Quaternion type represented using a scalar &#160;or &#160;and a 3D vector">
+<g id="a_node2"><a xlink:href="../../de/d58/structquaternion__.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="0,-78.5 0,-97.5 67,-97.5 67,-78.5 0,-78.5"/>
 <text text-anchor="middle" x="33.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">quaternion_</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d5/db4/structvec__3d__.html" target="_top" xlink:title="3D vector type">
+<g id="a_node3"><a xlink:href="../../d5/db4/structvec__3d__.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="7,-145.5 7,-164.5 60,-164.5 60,-145.5 7,-145.5"/>
 <text text-anchor="middle" x="33.5" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">vec_3d_</text>
 </a>

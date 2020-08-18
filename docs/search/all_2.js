@@ -27,7 +27,7 @@ var searchData=
   ['all_5fof_28',['all_of',['http://en.cppreference.com/w/cpp/algorithm/all_any_none_of.html',0,'std']]],
   ['allocate_29',['allocate',['http://en.cppreference.com/w/cpp/memory/allocator_traits/allocate.html',0,'std::allocator_traits::allocate()'],['http://en.cppreference.com/w/cpp/memory/allocator/allocate.html',0,'std::allocator::allocate()'],['http://en.cppreference.com/w/cpp/memory/scoped_allocator_adaptor/allocate.html',0,'std::scoped_allocator_adaptor::allocate()']]],
   ['allocate_5fshared_30',['allocate_shared',['http://en.cppreference.com/w/cpp/memory/shared_ptr/allocate_shared.html',0,'std']]],
-  ['allocator_31',['allocator',['http://en.cppreference.com/w/cpp/memory/allocator.html',0,'std::allocator'],['http://en.cppreference.com/w/cpp/memory/allocator/allocator.html',0,'std::allocator::allocator()']]],
+  ['allocator_31',['allocator',['http://en.cppreference.com/w/cpp/memory/allocator.html',0,'std::allocator&lt; T &gt;'],['http://en.cppreference.com/w/cpp/memory/allocator/allocator.html',0,'std::allocator::allocator()']]],
   ['allocator_5farg_5ft_32',['allocator_arg_t',['http://en.cppreference.com/w/cpp/memory/allocator_arg_t.html',0,'std']]],
   ['allocator_5ftraits_33',['allocator_traits',['http://en.cppreference.com/w/cpp/memory/allocator_traits.html',0,'std']]],
   ['alpha_34',['alpha',['http://en.cppreference.com/w/cpp/numeric/random/gamma_distribution/params.html',0,'std::gamma_distribution']]],
@@ -51,7 +51,7 @@ var searchData=
   ['atoi_52',['atoi',['http://en.cppreference.com/w/cpp/string/byte/atoi.html',0,'std']]],
   ['atol_53',['atol',['http://en.cppreference.com/w/cpp/string/byte/atoi.html',0,'std']]],
   ['atoll_54',['atoll',['http://en.cppreference.com/w/cpp/string/byte/atoi.html',0,'std']]],
-  ['atomic_55',['atomic',['http://en.cppreference.com/w/cpp/atomic/atomic.html',0,'std::atomic'],['http://en.cppreference.com/w/cpp/atomic/atomic/atomic.html',0,'std::atomic::atomic()']]],
+  ['atomic_55',['atomic',['http://en.cppreference.com/w/cpp/atomic/atomic.html',0,'std::atomic&lt; T &gt;'],['http://en.cppreference.com/w/cpp/atomic/atomic/atomic.html',0,'std::atomic::atomic()']]],
   ['atomic_5fcompare_5fexchange_5fstrong_56',['atomic_compare_exchange_strong',['http://en.cppreference.com/w/cpp/atomic/atomic_compare_exchange.html',0,'std']]],
   ['atomic_5fcompare_5fexchange_5fstrong_5fexplicit_57',['atomic_compare_exchange_strong_explicit',['http://en.cppreference.com/w/cpp/atomic/atomic_compare_exchange.html',0,'std']]],
   ['atomic_5fcompare_5fexchange_5fweak_58',['atomic_compare_exchange_weak',['http://en.cppreference.com/w/cpp/atomic/atomic_compare_exchange.html',0,'std']]],
@@ -77,5 +77,5 @@ var searchData=
   ['atomic_5fstore_78',['atomic_store',['http://en.cppreference.com/w/cpp/atomic/atomic_store.html',0,'std']]],
   ['atomic_5fstore_5fexplicit_79',['atomic_store_explicit',['http://en.cppreference.com/w/cpp/atomic/atomic_store.html',0,'std']]],
   ['atomic_5fthread_5ffence_80',['atomic_thread_fence',['http://en.cppreference.com/w/cpp/atomic/atomic_thread_fence.html',0,'std']]],
-  ['auto_5fptr_81',['auto_ptr',['http://en.cppreference.com/w/cpp/memory/auto_ptr.html',0,'std::auto_ptr'],['http://en.cppreference.com/w/cpp/memory/auto_ptr/auto_ptr.html',0,'std::auto_ptr::auto_ptr()']]]
+  ['auto_5fptr_81',['auto_ptr',['http://en.cppreference.com/w/cpp/memory/auto_ptr.html',0,'std::auto_ptr&lt; T &gt;'],['http://en.cppreference.com/w/cpp/memory/auto_ptr/auto_ptr.html',0,'std::auto_ptr::auto_ptr()']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pitch_3306',['pitch',['../d2/de8/structeuler__.html#aa71f9aa6dfa32d8014b2d54ab8410e0b',1,'euler_']]]
+  ['libquat_5fmajor_5fver_3314',['libquat_major_ver',['../d7/dd9/libquat__internal_8h.html#a2eaa62ce6a264df253a364d54eea566f',1,'libquat_internal.h']]],
+  ['libquat_5fminor_5fver_3315',['libquat_minor_ver',['../d7/dd9/libquat__internal_8h.html#a36691efcdfe2d9c7bfc30a703e424096',1,'libquat_internal.h']]]
 ];
