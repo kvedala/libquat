@@ -25,7 +25,7 @@ static const char libquat_minor_ver =
 
 #ifdef __cplusplus
 /**< internal variable to keep a track of version validity */
-extern "C" LIBQUAT_DLL_EXPORTED
+LIBQUAT_DLL_EXPORTED extern "C"
 {
 #endif
     /**< internal variable to keep a track of version validity */
