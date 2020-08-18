@@ -16,10 +16,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # set(CMAKE_VERBOSE_MAKEFILE ON)
 # set(CMAKE_CXX_CLANG_TIDY clang-tidy --fix --fix-errors)
 
-# set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-# set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-
 # option (BUILD_SHARED_LIBS "Build the libquat library shared." ON)
 # option (BUILD_STATIC_LIBS "Build the libquat library static." ON)
 
@@ -59,6 +55,7 @@ target_include_directories(libquat PUBLIC
 set_target_properties(libquat PROPERTIES
     VERSION ${LIBQUAT_VERSION_MAJOR}.${LIBQUAT_VERSION_MINOR}
     SOVERSION ${LIBQUAT_VERSION_MAJOR}
+    PUBLIC_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h
     INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
@@ -74,8 +71,14 @@ option(BUILD_DOCUMENTATION "Create and install the HTML based API documentation 
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
 
-install(TARGETS libquat DESTINATION lib)
-install(TARGETS libquat EXPORT libuqat_export)
+install(TARGETS libquat 
+    EXPORT libquat_export
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
+install(EXPORT libquat_export DESTINATION cmake)
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" DESTINATION include)
 
 if(BUILD_DOCUMENTATION)
