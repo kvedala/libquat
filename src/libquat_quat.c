@@ -94,3 +94,41 @@ quaternion quaternion_multiply(const quaternion *in_quat1,
 
     return temp;
 }
+
+quaternion quaternion_add(const quaternion *in_quat1,
+                          const quaternion *in_quat2, quaternion *out_quat)
+{
+    if (!in_quat1 || !in_quat2)  // if null
+    {
+        fprintf(stderr, "%s: Invalid input.", __func__);
+        return *out_quat;
+    }
+
+    quaternion temp;
+    temp.w = in_quat1->w + out_quat->w;
+    vector_add(&(in_quat1->dual), &(in_quat2->dual), &(temp.dual));
+
+    if (out_quat)  // if not null
+        memcpy(out_quat, &temp, sizeof(temp));
+
+    return temp;
+}
+
+quaternion quaternion_sub(const quaternion *in_quat1,
+                          const quaternion *in_quat2, quaternion *out_quat)
+{
+    if (!in_quat1 || !in_quat2)  // if null
+    {
+        fprintf(stderr, "%s: Invalid input.", __func__);
+        return *out_quat;
+    }
+
+    quaternion temp;
+    temp.w = in_quat1->w - out_quat->w;
+    vector_sub(&(in_quat1->dual), &(in_quat2->dual), &(temp.dual));
+
+    if (out_quat)  // if not null
+        memcpy(out_quat, &temp, sizeof(temp));
+
+    return temp;
+}

@@ -32,11 +32,12 @@ add_compile_definitions(LIBQUAT_MINOR_VER=${LIBQUAT_VERSION_MINOR})
 
 set(SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_err.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_vec.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_vec.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_quat.c
     ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_internal.c
 )
 
+set(CMAKE_BUILD_STATIC_LIBS ON)
 add_compile_definitions(BUILDING_LIBQUAT)
 if(BUILD_STATIC_LIBS)
 	set(LIBTYPE STATIC)

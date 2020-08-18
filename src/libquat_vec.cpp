@@ -4,59 +4,106 @@
  * @author Krishna Vedala
  */
 
-#include <stdio.h>
 #ifdef __arm__
 #define LIBQUAT_ARM
 #include <arm_math.h>
 #else
-#include <math.h>
+#include <cmath>
 #endif
-#include <string.h>  // for memmove
+#include <iostream>
 
 #include "libquat.h"
 #include "libquat_internal.h"
 
-void vector_sub(const vec_3d *a, const vec_3d *b, vec_3d *out)
+vec_3d operator-(const vec_3d &a, const vec_3d &b)
 {
+    vec_3d result = {0.f};
 #ifdef LIBQUAT_ARM
-    arm_sub_f32((float *)a, (float *)b, (float *)out);
+    arm_sub_f32((float *)&a, (float *)&b, (float *)&result);
 #else
-    out->x = a->x - b->x;
-    out->y = a->y - b->y;
-    out->z = a->z - b->z;
+    result.x = a.x - b.x;
+    result.y = a.y - b.y;
+    result.z = a.z - b.z;
 #endif
+
+    return result;
 }
 
-void vector_add(const vec_3d *a, const vec_3d *b, vec_3d *out)
+vec_3d vector_sub(const vec_3d *a, const vec_3d *b, vec_3d *out)
 {
-#ifdef LIBQUAT_ARM
-    arm_add_f32((float *)a, (float *)b, (float *)out);
-#else
-    out->x = a->x + b->x;
-    out->y = a->y + b->y;
-    out->z = a->z + b->z;
-#endif
+    auto result = *a - *b;
+    if (out)
+        *out = result;
+
+    return result;
 }
 
-void dot_prod(const vec_3d *a, const vec_3d *b, float *dot)
+vec_3d operator+(const vec_3d &a, const vec_3d &b)
 {
+    vec_3d result = {0.f};
 #ifdef LIBQUAT_ARM
-    arm_dot_prod_f32((float *)a, (float *)b, dot);
+    arm_sub_f32((float *)&a, (float *)&b, (float *)&result);
 #else
-    *dot = a->x * b->x;
-    *dot += a->y * b->y;
-    *dot += a->z * b->z;
+    result.x = a.x + b.x;
+    result.y = a.y + b.y;
+    result.z = a.z + b.z;
 #endif
+
+    return result;
 }
 
-void vector_prod(const vec_3d *a, const vec_3d *b, vec_3d *o)
+vec_3d vector_add(const vec_3d *a, const vec_3d *b, vec_3d *out)
+{
+    auto result = *a + *b;
+    if (out)
+        *out = result;
+
+    return result;
+}
+
+float operator*(const vec_3d &a, const vec_3d &b)
+{
+    float result = 0.f;
+#ifdef LIBQUAT_ARM
+    arm_dot_prod_f32((float *)a, (float *)b, result);
+#else
+    result = a.x * b.x;
+    result += a.y * b.y;
+    result += a.z * b.z;
+#endif
+
+    return result;
+}
+
+float dot_prod(const vec_3d *a, const vec_3d *b, float *dot)
+{
+    float result = *a * *b;
+
+    if (dot)  // if not null
+        *dot = result;
+
+    return result;
+}
+
+vec_3d operator^(const vec_3d &a, const vec_3d &b)
 {
     vec_3d out;  // better this way to avoid copying results to input vectors
                  // themselves
-    out.x = a->y * b->z - a->z * b->y;
-    out.y = -a->x * b->z + a->z * b->x;
-    out.z = a->x * b->y - a->y * b->x;
-    memmove(o, &out, sizeof(out));
+    out.x = a.y * b.z - a.z * b.y;
+    out.y = -a.x * b.z + a.z * b.x;
+    out.z = a.x * b.y - a.y * b.x;
+
+    return out;
+}
+
+vec_3d vector_prod(const vec_3d *a, const vec_3d *b, vec_3d *o)
+{
+    auto result = *a ^ *b;
+
+    if (o)  // if not null
+        *o = result;
+
+    return result;
 }
 
 const char *print_vector(const vec_3d *a, const char *name)
@@ -67,30 +114,49 @@ const char *print_vector(const vec_3d *a, const char *name)
     return vec_str;
 }
 
-void vector_norm(const vec_3d *a, float *n)
+float operator~(const vec_3d &a)
 {
-    dot_prod(a, a, n);
+    float result = a * a;
 #ifdef LIBQUAT_ARM
-    arm_sqrt_f32(*n, n);
+    arm_sqrt_f32(&result, result);
 #else
-    *n = sqrtf(*n);
+    result = sqrtf(result);
 #endif
+
+    return result;
 }
 
-libquat_err unit_vec(const vec_3d *a, vec_3d *n)
+float vector_norm(const vec_3d *a, float *n)
 {
-    float norm;
-    vector_norm(a, &norm);
+    auto result = ~(*a);
+
+    if (n)  // if not null
+        *n = result;
+
+    return result;
+}
+
+vec_3d unit_vec(const vec_3d *a, vec_3d *n)
+{
+    float norm = ~(*a);
+    vec_3d result = {0.f};
+
     if (fabsf(norm) < LIBQUAT_EPSILON)
-        return LIBQUAT_DIV_BY_ZERO;
+    {
+        std::cerr << __func__ << ": Division by zero.";
+        return result;
+    }
 
     if (norm != 1.F)  // perform division only if needed
     {
-        n->x = a->x / norm;
-        n->y = a->y / norm;
-        n->z = a->z / norm;
+        result.x = a->x / norm;
+        result.y = a->y / norm;
+        result.z = a->z / norm;
     }
-    return LIBQUAT_OK;
+    if (n)
+        *n = result;
+
+    return result;
 }
 
 void get_cross_matrix(const vec_3d *a, mat_3x3 *A)

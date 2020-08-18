@@ -53,5 +53,17 @@ auto main() -> int
     assert(fabsf(test_quat.q2 - quat.q2) < 0.1f);
     assert(fabsf(test_quat.q3 - quat.q3) < 0.1f);
 
+    quaternion q1 = {1.f, -1.f, -1.f, 1.f};
+    quaternion q2 = {-1.f, -1.f, -1.f, 1.f};
+    quaternion q3 = quaternion_multiply(&q1, &q2, nullptr);
+    std::cout << "Quaternion: " << q3.q0 << ", " << q3.q1 << ", " << q3.q2
+              << ", " << q3.q3 << "\n";
+
+    quaternion q4;
+    q4.w = q1.q0 * q2.q0 - dot_prod(&q1.dual, &q2.dual, nullptr);
+
+    std::cout << "Quaternion: " << q4.q0 << ", " << q4.q1 << ", " << q4.q2
+              << ", " << q4.q3 << "\n";
+
     return 0;
 }
