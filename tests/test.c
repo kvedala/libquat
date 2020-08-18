@@ -16,10 +16,10 @@
  */
 int main(void)
 {
-    vec_3d a = {1., 2., 3.};
-    vec_3d b = {1., 1., 1.};
-    vec_3d c;
-    float d;
+    vec_3d a = {1.f, 2.f, 3.f};
+    vec_3d b = {1.f, 1.f, 1.f};
+    vec_3d c = {0.f};
+    float d = 0.f;
 
     printf("%s", print_vector(&a, "a"));
     printf("%s", print_vector(&b, "b"));
