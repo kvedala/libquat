@@ -27,7 +27,7 @@
 
 #ifdef __cplusplus
 #include <iostream>
-LIBQUAT_DLL_EXPORTED extern "C"
+extern "C" LIBQUAT_DLL_EXPORTED
 {
 #endif
 
@@ -78,15 +78,18 @@ LIBQUAT_DLL_EXPORTED extern "C"
     /** A 3x3 Matrix type definition */
     typedef struct mat_3x3_
     {
-        union { /**< 3 element row 1 */
+        union
+        { /**< 3 element row 1 */
             float row1[3];
             vec_3d vec1;
         };
-        union { /**< 3 element row 2 */
+        union
+        { /**< 3 element row 2 */
             float row2[3];
             vec_3d vec2;
         };
-        union { /**< 3 element row 3 */
+        union
+        { /**< 3 element row 3 */
             float row3[3];
             vec_3d vec3;
         };
@@ -195,12 +198,14 @@ LIBQUAT_DLL_EXPORTED extern "C"
      */
     typedef struct quaternion_
     {
-        union {
+        union
+        {
             float w;  /**< real part of quaternion */
             float q0; /**< real part of quaternion */
         };
         /**< dual part of quaternion */
-        union {
+        union
+        {
             vec_3d dual; /**< can be a 3D vector */
             /** or individual values */
             struct
@@ -213,17 +218,20 @@ LIBQUAT_DLL_EXPORTED extern "C"
     /** 3D Euler or Tait-Bryan angles (in radian) */
     typedef struct euler_
     {
-        union {
+        union
+        {
             float roll; /**< or bank \f$\phi\f$ = rotation about X axis */
             float bank; /**< or roll \f$\phi\f$ = rotation about X axis */
         };
-        union {
+        union
+        {
             float
                 pitch; /**< or elevation \f$\theta\f$ = rotation about Y axis */
             float
                 elevation; /**< or pitch \f$\theta\f$ = rotation about Y axis */
         };
-        union {
+        union
+        {
             float yaw;     /**< or heading \f$\psi\f$ = rotation about Z axis */
             float heading; /**< or yaw \f$\psi\f$ = rotation about Z axis */
         };
