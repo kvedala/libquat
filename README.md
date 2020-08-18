@@ -30,3 +30,6 @@ $ cmake --build build -t install
 ```
 4. Compile custom programs
 To incorporate to your programs, all functions and their descriptions are available in `libquat.h` and also at the online link above and link against the compiled library.
+
+## Contribute
+We welcome any contributions and suggestions. Feel free to submit a pull-quest with appropriate info. Thank you in advance.
