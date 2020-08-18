@@ -33,7 +33,7 @@ add_compile_definitions(LIBQUAT_MINOR_VER=${LIBQUAT_VERSION_MINOR})
 set(SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_err.c
     ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_vec.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_quat.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_quat.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/libquat_internal.c
 )
 

@@ -10,7 +10,7 @@
 #else
 #include <cmath>
 #endif
-#include <iostream>
+#include <iomanip>
 
 #include "libquat.h"
 #include "libquat_internal.h"
@@ -29,14 +29,7 @@ vec_3d operator-(const vec_3d &a, const vec_3d &b)
     return result;
 }
 
-vec_3d vector_sub(const vec_3d *a, const vec_3d *b, vec_3d *out)
-{
-    auto result = *a - *b;
-    if (out)
-        *out = result;
-
-    return result;
-}
+vec_3d vector_sub(const vec_3d *a, const vec_3d *b) { return *a - *b; }
 
 vec_3d operator+(const vec_3d &a, const vec_3d &b)
 {
@@ -52,14 +45,7 @@ vec_3d operator+(const vec_3d &a, const vec_3d &b)
     return result;
 }
 
-vec_3d vector_add(const vec_3d *a, const vec_3d *b, vec_3d *out)
-{
-    auto result = *a + *b;
-    if (out)
-        *out = result;
-
-    return result;
-}
+vec_3d vector_add(const vec_3d *a, const vec_3d *b) { return *a + *b; }
 
 float operator*(const vec_3d &a, const vec_3d &b)
 {
@@ -75,15 +61,29 @@ float operator*(const vec_3d &a, const vec_3d &b)
     return result;
 }
 
-float dot_prod(const vec_3d *a, const vec_3d *b, float *dot)
+vec_3d operator*(const float a, const vec_3d &b)
 {
-    float result = *a * *b;
-
-    if (dot)  // if not null
-        *dot = result;
+    vec_3d result = {
+        .x = a * b.x,
+        .y = a * b.y,
+        .z = a * b.z,
+    };
 
     return result;
 }
+
+vec_3d operator*(const vec_3d &a, const float b)
+{
+    vec_3d result = {
+        .x = a.x * b,
+        .y = a.y * b,
+        .z = a.z * b,
+    };
+
+    return result;
+}
+
+float dot_prod(const vec_3d *a, const vec_3d *b) { return *a * *b; }
 
 vec_3d operator^(const vec_3d &a, const vec_3d &b)
 {
@@ -96,14 +96,22 @@ vec_3d operator^(const vec_3d &a, const vec_3d &b)
     return out;
 }
 
-vec_3d vector_prod(const vec_3d *a, const vec_3d *b, vec_3d *o)
+vec_3d vector_prod(const vec_3d *a, const vec_3d *b) { return *a ^ *b; }
+
+std::ostream &operator<<(std::ostream &out, vec_3d const &v)
 {
-    auto result = *a ^ *b;
+    const int width = 10;
+    const char separator = ' ';
 
-    if (o)  // if not null
-        *o = result;
+    out << "<";
+    out << std::left << std::setw(width) << std::setfill(separator) << v.x;
+    out << "," << std::left << std::setw(width) << std::setfill(separator)
+        << v.y;
+    out << "," << std::left << std::setw(width) << std::setfill(separator)
+        << v.z;
+    out << ">";
 
-    return result;
+    return out;
 }
 
 const char *print_vector(const vec_3d *a, const char *name)
@@ -126,17 +134,9 @@ float operator~(const vec_3d &a)
     return result;
 }
 
-float vector_norm(const vec_3d *a, float *n)
-{
-    auto result = ~(*a);
+float vector_norm(const vec_3d *a) { return ~(*a); }
 
-    if (n)  // if not null
-        *n = result;
-
-    return result;
-}
-
-vec_3d unit_vec(const vec_3d *a, vec_3d *n)
+vec_3d unit_vec(const vec_3d *a)
 {
     float norm = ~(*a);
     vec_3d result = {0.f};
@@ -153,14 +153,12 @@ vec_3d unit_vec(const vec_3d *a, vec_3d *n)
         result.y = a->y / norm;
         result.z = a->z / norm;
     }
-    if (n)
-        *n = result;
 
     return result;
 }
 
-void get_cross_matrix(const vec_3d *a, mat_3x3 *A)
+mat_3x3 get_cross_matrix(const vec_3d *a)
 {
-    float aA[] = {0., -a->z, a->y, a->z, 0., -a->x, -a->y, a->x, 0.};
-    memmove(A, aA, 9 * sizeof(float));
+    mat_3x3 A = {0., -a->z, a->y, a->z, 0., -a->x, -a->y, a->x, 0.};
+    return A;
 }

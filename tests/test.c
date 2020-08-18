@@ -24,15 +24,15 @@ int main(void)
     printf("%s", print_vector(&a, "a"));
     printf("%s", print_vector(&b, "b"));
 
-    vector_norm(&a, &d);
+    d = vector_norm(&a);
     printf("|a| = %.4g\n", d);
-    vector_norm(&b, &d);
+    d = vector_norm(&b);
     printf("|b| = %.4g\n", d);
 
-    dot_prod(&a, &b, &d);
+    d = dot_prod(&a, &b);
     printf("Dot product: %f\n", d);
 
-    vector_prod(&a, &b, &c);
+    c = vector_prod(&a, &b);
     printf("Vector product ");
     printf("%s", print_vector(&c, "c"));
 
