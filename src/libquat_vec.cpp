@@ -15,6 +15,11 @@
 #include "libquat.h"
 #include "libquat_internal.h"
 
+vec_3d operator-(const vec_3d &a) {
+    vec_3d ret = {-a.x, -a.y, -a.z};
+    return ret;
+}
+
 vec_3d operator-(const vec_3d &a, const vec_3d &b) {
     vec_3d result = {0.f};
 #ifdef LIBQUAT_ARM

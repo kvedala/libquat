@@ -349,6 +349,16 @@ typedef struct dual_quat_ {
 LIBQUAT_DLL_EXPORTED vec_3d operator-(const vec_3d &a, const vec_3d &b);
 
 /**
+ * Unary negation operator.
+ * @f[
+ * -\vec{a}=(-a_x)\hat{i}+ (-a_y)\hat{j} + (-a_z)\hat{k}
+ * @f]
+ * @param[in] a vector to negate
+ * @returns resultant vector
+ */
+LIBQUAT_DLL_EXPORTED vec_3d operator-(const vec_3d &a);
+
+/**
  * Add one vector to another.
  * @f[
  * \vec{c}=\vec{a}-\vec{b}=\left(a_x-b_x\right)\hat{i}+
@@ -374,7 +384,7 @@ LIBQUAT_DLL_EXPORTED float operator*(const vec_3d &a, const vec_3d &b);
 /**
  * Scalar multiplication of a 3D vector.
  * @f[
- * \vec{a}\cdot\vec{b}=a\cdot b_x + a\cdot b_y + a\cdot b_z
+ * a\cdot\vec{b}=a\cdot b_x\hat{i} + a\cdot b_y \hat{j} + a\cdot b_z\hat{k}
  * @f]
  * @param[in] a pre-multiplying scalar
  * @param[in] b second vector
@@ -385,7 +395,7 @@ LIBQUAT_DLL_EXPORTED vec_3d operator*(const float a, const vec_3d &b);
 /**
  * Scalar multiplication of a 3D vector.
  * @f[
- * \vec{a}\cdot\vec{b}=a_x\cdot b + a_y\cdot b + a_z\cdot b
+ * \vec{a}\cdot b=a_x\cdot b\hat{i} + a_y\cdot b\hat{j} + a_z\cdot b\hat{k}
  * @f]
  * @param[in] a first vector
  * @param[in] b post-multiplying scalar
