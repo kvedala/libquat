@@ -469,6 +469,29 @@ LIBQUAT_DLL_EXPORTED quaternion operator+(const quaternion &in_quat1,
  */
 LIBQUAT_DLL_EXPORTED quaternion operator-(const quaternion &in_quat1,
                                           const quaternion &in_quat2);
+
+/**
+ * Function to multiply two quaternions.
+ * \f{eqnarray*}{
+ * \mathbf{c} & = & \mathbf{a}\otimes\mathbf{b}\\
+ * & = & \begin{bmatrix}a_{0} & a_{1} & a_{2} &
+ *  a_{3}\end{bmatrix}\otimes\begin{bmatrix}b_{0} & b_{1} & b_{2} &
+ *  b_{3}\end{bmatrix}\\
+ * & = &
+ * \begin{bmatrix}
+ *  a_{0}b_{0}-a_{1}b_{1}-a_{2}b_{2}-a_{3}b_{3}\\
+ *  a_{0}b_{1}+a_{1}b_{0}+a_{2}b_{3}-a_{3}b_{2}\\
+ *  a_{0}b_{2}-a_{1}b_{3}+a_{2}b_{0}+a_{3}b_{1}\\
+ *  a_{0}b_{3}+a_{1}b_{2}-a_{2}b_{1}+a_{3}b_{0}
+ * \end{bmatrix}^{T}
+ * \f}
+ *
+ * @param [in] in_quat1 first input quaternion instance
+ * @param [in] in_quat2 second input quaternion instance
+ * @returns resultant quaternion
+ */
+LIBQUAT_DLL_EXPORTED quaternion operator*(const quaternion &in_quat1,
+                                          const quaternion &in_quat2);
 /** @} */
 
 #endif

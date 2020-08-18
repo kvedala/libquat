@@ -3,6 +3,8 @@
  * @brief API Functions related to 3D Quaternion operations.
  * @author Krishna Vedala
  */
+#include "libquat.h"
+#include "libquat_internal.h"
 
 #ifdef __arm__
 #define LIBQUAT_ARM
@@ -10,9 +12,6 @@
 #else
 #include <cmath>
 #endif
-
-#include "libquat.h"
-#include "libquat_internal.h"
 
 quaternion quat_from_euler(const euler *in_euler)
 {
@@ -61,16 +60,9 @@ euler euler_from_quat(const quaternion *in_quat)
     return temp;
 }
 
-quaternion quaternion_multiply(const quaternion *in_quat1,
-                               const quaternion *in_quat2)
+quaternion operator*(const quaternion &in_quat1, const quaternion &in_quat2)
 {
     quaternion temp = {0.f};
-
-    if (!in_quat1 || !in_quat2)  // if null
-    {
-        fprintf(stderr, "%s: Invalid input.", __func__);
-        return temp;
-    }
 
     temp.w = in_quat1->w * in_quat2->w - in_quat1->q1 * in_quat2->q1 -
              in_quat1->q2 * in_quat2->q2 - in_quat1->q3 * in_quat2->q3;
@@ -82,6 +74,18 @@ quaternion quaternion_multiply(const quaternion *in_quat1,
               in_quat1->q2 * in_quat2->q1 + in_quat1->q3 * in_quat2->w;
 
     return temp;
+}
+
+quaternion quaternion_multiply(const quaternion *in_quat1,
+                               const quaternion *in_quat2)
+{
+    if (!in_quat1 || !in_quat2)  // if null
+    {
+        fprintf(stderr, "%s: Invalid input.", __func__);
+        return {0.f};
+    }
+
+    return *in_quat1 + *in_quat2;
 }
 
 quaternion operator+(const quaternion &in_quat1, const quaternion &in_quat2)
