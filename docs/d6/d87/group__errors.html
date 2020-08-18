@@ -113,12 +113,12 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga31d07d4b98741c0bf5e1800c01c02ed7"><td class="memItemLeft" align="right" valign="top">LIBQUAT_DLL_EXPORTED const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/group__errors.html#ga31d07d4b98741c0bf5e1800c01c02ed7">err_to_str</a> (<a class="el" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a> err_code)</td></tr>
-<tr class="memdesc:ga31d07d4b98741c0bf5e1800c01c02ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain descriptive string message for a <a class="el" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db" title="Library return types indicating different error types.">libquat_err</a> type error code.  <a href="../../d6/d87/group__errors.html#ga31d07d4b98741c0bf5e1800c01c02ed7">More...</a><br /></td></tr>
-<tr class="separator:ga31d07d4b98741c0bf5e1800c01c02ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6537a657737db452e7db4e4cac4a4589"><td class="memItemLeft" align="right" valign="top">LIBQUAT_DLL_EXPORTED <a class="el" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/group__errors.html#ga6537a657737db452e7db4e4cac4a4589">libquat_version_check</a> (const char major_ver)</td></tr>
-<tr class="memdesc:ga6537a657737db452e7db4e4cac4a4589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check the version number of the library with the header.  <a href="../../d6/d87/group__errors.html#ga6537a657737db452e7db4e4cac4a4589">More...</a><br /></td></tr>
-<tr class="separator:ga6537a657737db452e7db4e4cac4a4589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ad0462c8490053deff3620460269379"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/group__errors.html#ga2ad0462c8490053deff3620460269379">err_to_str</a> (<a class="el" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a> err_code)</td></tr>
+<tr class="memdesc:ga2ad0462c8490053deff3620460269379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain descriptive string message for a <a class="el" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db" title="Library return types indicating different error types.">libquat_err</a> type error code.  <a href="../../d6/d87/group__errors.html#ga2ad0462c8490053deff3620460269379">More...</a><br /></td></tr>
+<tr class="separator:ga2ad0462c8490053deff3620460269379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac6a901ea8e866ba2cba10c0e399a6e36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/group__errors.html#gac6a901ea8e866ba2cba10c0e399a6e36">libquat_version_check</a> (const char major_ver)</td></tr>
+<tr class="memdesc:gac6a901ea8e866ba2cba10c0e399a6e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check the version number of the library with the header.  <a href="../../d6/d87/group__errors.html#gac6a901ea8e866ba2cba10c0e399a6e36">More...</a><br /></td></tr>
+<tr class="separator:gac6a901ea8e866ba2cba10c0e399a6e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -143,23 +143,23 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094"></a>LIBQUAT_DIV_BY_ZERO&#160;</td><td class="fielddoc"><p>Division by zero. </p>
 </td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a> = 0,      <span class="comment">/**&lt; No error */</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a>, <span class="comment">/**&lt; header and library version do not match */</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094">LIBQUAT_DIV_BY_ZERO</a>, <span class="comment">/**&lt; Division by zero */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    } <a class="code" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a>;</div>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a> = 0,      <span class="comment">/**&lt; No error */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a>, <span class="comment">/**&lt; header and library version do not match */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094">LIBQUAT_DIV_BY_ZERO</a>, <span class="comment">/**&lt; Division by zero */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    } <a class="code" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a>;</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga31d07d4b98741c0bf5e1800c01c02ed7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga31d07d4b98741c0bf5e1800c01c02ed7">&#9670;&nbsp;</a></span>err_to_str()</h2>
+<a id="ga2ad0462c8490053deff3620460269379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ad0462c8490053deff3620460269379">&#9670;&nbsp;</a></span>err_to_str()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">LIBQUAT_DLL_EXPORTED const char* err_to_str </td>
+          <td class="memname">const char* err_to_str </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a>&#160;</td>
           <td class="paramname"><em>err_code</em></td><td>)</td>
@@ -192,14 +192,14 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ga6537a657737db452e7db4e4cac4a4589"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6537a657737db452e7db4e4cac4a4589">&#9670;&nbsp;</a></span>libquat_version_check()</h2>
+<a id="gac6a901ea8e866ba2cba10c0e399a6e36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac6a901ea8e866ba2cba10c0e399a6e36">&#9670;&nbsp;</a></span>libquat_version_check()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">LIBQUAT_DLL_EXPORTED <a class="el" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a> libquat_version_check </td>
+          <td class="memname"><a class="el" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a> libquat_version_check </td>
           <td>(</td>
           <td class="paramtype">const char&#160;</td>
           <td class="paramname"><em>major_ver</em></td><td>)</td>
@@ -233,11 +233,11 @@ Functions</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="agroup__quaternions_html_ga2eaa62ce6a264df253a364d54eea566f"><div class="ttname"><a href="../../de/d5a/group__quaternions.html#ga2eaa62ce6a264df253a364d54eea566f">libquat_major_ver</a></div><div class="ttdeci">static const char libquat_major_ver</div><div class="ttdoc">Store this internally.</div><div class="ttdef"><b>Definition:</b> libquat_internal.h:13</div></div>
-<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a></div><div class="ttdeci">@ LIBQUAT_BAD_VERSION</div><div class="ttdoc">header and library version do not match</div><div class="ttdef"><b>Definition:</b> libquat.h:41</div></div>
-<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094">LIBQUAT_DIV_BY_ZERO</a></div><div class="ttdeci">@ LIBQUAT_DIV_BY_ZERO</div><div class="ttdoc">Division by zero.</div><div class="ttdef"><b>Definition:</b> libquat.h:42</div></div>
-<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a></div><div class="ttdeci">@ LIBQUAT_OK</div><div class="ttdoc">No error.</div><div class="ttdef"><b>Definition:</b> libquat.h:40</div></div>
-<div class="ttc" id="agroup__errors_html_ga42cbbc9e0fbc3c4132109b82258902db"><div class="ttname"><a href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a></div><div class="ttdeci">libquat_err</div><div class="ttdoc">Library return types indicating different error types.</div><div class="ttdef"><b>Definition:</b> libquat.h:39</div></div>
+<div class="ttc" id="agroup__quaternions_html_ga2eaa62ce6a264df253a364d54eea566f"><div class="ttname"><a href="../../de/d5a/group__quaternions.html#ga2eaa62ce6a264df253a364d54eea566f">libquat_major_ver</a></div><div class="ttdeci">static const char libquat_major_ver</div><div class="ttdoc">Store this internally.</div><div class="ttdef"><b>Definition:</b> libquat_internal.h:11</div></div>
+<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a></div><div class="ttdeci">@ LIBQUAT_BAD_VERSION</div><div class="ttdoc">header and library version do not match</div><div class="ttdef"><b>Definition:</b> libquat.h:42</div></div>
+<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094">LIBQUAT_DIV_BY_ZERO</a></div><div class="ttdeci">@ LIBQUAT_DIV_BY_ZERO</div><div class="ttdoc">Division by zero.</div><div class="ttdef"><b>Definition:</b> libquat.h:43</div></div>
+<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a></div><div class="ttdeci">@ LIBQUAT_OK</div><div class="ttdoc">No error.</div><div class="ttdef"><b>Definition:</b> libquat.h:41</div></div>
+<div class="ttc" id="agroup__errors_html_ga42cbbc9e0fbc3c4132109b82258902db"><div class="ttname"><a href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a></div><div class="ttdeci">libquat_err</div><div class="ttdoc">Library return types indicating different error types.</div><div class="ttdef"><b>Definition:</b> libquat.h:40</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

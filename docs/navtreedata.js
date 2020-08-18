@@ -25,6 +25,9 @@
 var NAVTREE =
 [
   [ "libQuat", "index.html", [
+    [ "libQuat", "d3/dcc/md__r_e_a_d_m_e.html", [
+      [ "Overview", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md1", null ]
+    ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],

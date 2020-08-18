@@ -136,23 +136,23 @@ Functions</h2></td></tr>
 <p>Test program in C. </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 <div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="../../d5/db4/structvec__3d__.html">vec_3d</a> a = {1., 2., 3.};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../d5/db4/structvec__3d__.html">vec_3d</a> b = {1., 1., 1.};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../d5/db4/structvec__3d__.html">vec_3d</a> c;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">float</span> d;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="../../d5/db4/structvec__3d__.html">vec_3d</a> a = {1.f, 2.f, 3.f};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../d5/db4/structvec__3d__.html">vec_3d</a> b = {1.f, 1.f, 1.f};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../d5/db4/structvec__3d__.html">vec_3d</a> c = {0.f};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">float</span> d = 0.f;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/c/fprintf.html">printf</a>(<span class="stringliteral">&quot;%s&quot;</span>, <a class="code" href="../../de/d7b/group__vec__3d.html#ga7b0f47124722e82c0f646d4627833b1f">print_vector</a>(&amp;a, <span class="stringliteral">&quot;a&quot;</span>));</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/c/fprintf.html">printf</a>(<span class="stringliteral">&quot;%s&quot;</span>, <a class="code" href="../../de/d7b/group__vec__3d.html#ga7b0f47124722e82c0f646d4627833b1f">print_vector</a>(&amp;b, <span class="stringliteral">&quot;b&quot;</span>));</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../de/d7b/group__vec__3d.html#ga784b31d4756d5e0cbe69e182c7b9c840">vector_norm</a>(&amp;a, &amp;d);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    d = <a class="code" href="../../de/d7b/group__vec__3d.html#ga94805165d037d111d7d7c0df99e3a5de">vector_norm</a>(&amp;a);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/c/fprintf.html">printf</a>(<span class="stringliteral">&quot;|a| = %.4g\n&quot;</span>, d);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../de/d7b/group__vec__3d.html#ga784b31d4756d5e0cbe69e182c7b9c840">vector_norm</a>(&amp;b, &amp;d);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    d = <a class="code" href="../../de/d7b/group__vec__3d.html#ga94805165d037d111d7d7c0df99e3a5de">vector_norm</a>(&amp;b);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/c/fprintf.html">printf</a>(<span class="stringliteral">&quot;|b| = %.4g\n&quot;</span>, d);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../de/d7b/group__vec__3d.html#gae6fb2fcf3e48f82c5ffe03bdf5539407">dot_prod</a>(&amp;a, &amp;b, &amp;d);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    d = <a class="code" href="../../de/d7b/group__vec__3d.html#ga243e74d542d0d4d14fa3ae0bc2170d84">dot_prod</a>(&amp;a, &amp;b);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/c/fprintf.html">printf</a>(<span class="stringliteral">&quot;Dot product: %f\n&quot;</span>, d);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../de/d7b/group__vec__3d.html#ga8067d70e877568a2a4df5c2a9ffb4fa3">vector_prod</a>(&amp;a, &amp;b, &amp;c);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    c = <a class="code" href="../../de/d7b/group__vec__3d.html#gae4a49e6bdf13df949e8b23c7925bb5f5">vector_prod</a>(&amp;a, &amp;b);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/c/fprintf.html">printf</a>(<span class="stringliteral">&quot;Vector product &quot;</span>);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/c/fprintf.html">printf</a>(<span class="stringliteral">&quot;%s&quot;</span>, <a class="code" href="../../de/d7b/group__vec__3d.html#ga7b0f47124722e82c0f646d4627833b1f">print_vector</a>(&amp;c, <span class="stringliteral">&quot;c&quot;</span>));</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
@@ -161,7 +161,7 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/db9/test_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.svg" width="324" height="158"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/db9/test_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.svg" width="204" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -169,12 +169,12 @@ Here is the call graph for this function:</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="agroup__vec__3d_html_ga94805165d037d111d7d7c0df99e3a5de"><div class="ttname"><a href="../../de/d7b/group__vec__3d.html#ga94805165d037d111d7d7c0df99e3a5de">vector_norm</a></div><div class="ttdeci">float vector_norm(const vec_3d *a)</div><div class="ttdoc">Compute the norm a vector.</div><div class="ttdef"><b>Definition:</b> libquat_vec.cpp:137</div></div>
 <div class="ttc" id="astructvec__3d___html"><div class="ttname"><a href="../../d5/db4/structvec__3d__.html">vec_3d_</a></div><div class="ttdoc">3D vector type</div><div class="ttdef"><b>Definition:</b> libquat.h:67</div></div>
+<div class="ttc" id="agroup__vec__3d_html_gae4a49e6bdf13df949e8b23c7925bb5f5"><div class="ttname"><a href="../../de/d7b/group__vec__3d.html#gae4a49e6bdf13df949e8b23c7925bb5f5">vector_prod</a></div><div class="ttdeci">vec_3d vector_prod(const vec_3d *a, const vec_3d *b)</div><div class="ttdoc">Compute the vector product of two 3d vectors.</div><div class="ttdef"><b>Definition:</b> libquat_vec.cpp:99</div></div>
+<div class="ttc" id="agroup__vec__3d_html_ga243e74d542d0d4d14fa3ae0bc2170d84"><div class="ttname"><a href="../../de/d7b/group__vec__3d.html#ga243e74d542d0d4d14fa3ae0bc2170d84">dot_prod</a></div><div class="ttdeci">float dot_prod(const vec_3d *a, const vec_3d *b)</div><div class="ttdoc">Obtain the dot product of two 3D vectors.</div><div class="ttdef"><b>Definition:</b> libquat_vec.cpp:86</div></div>
 <div class="ttc" id="afprintf_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/c/fprintf.html">std::printf</a></div><div class="ttdeci">T printf(T... args)</div></div>
-<div class="ttc" id="agroup__vec__3d_html_ga8067d70e877568a2a4df5c2a9ffb4fa3"><div class="ttname"><a href="../../de/d7b/group__vec__3d.html#ga8067d70e877568a2a4df5c2a9ffb4fa3">vector_prod</a></div><div class="ttdeci">LIBQUAT_DLL_EXPORTED void vector_prod(const vec_3d *a, const vec_3d *b, vec_3d *o)</div><div class="ttdoc">Compute the vector product of two 3d vectors.</div><div class="ttdef"><b>Definition:</b> libquat_vec.c:52</div></div>
-<div class="ttc" id="agroup__vec__3d_html_ga7b0f47124722e82c0f646d4627833b1f"><div class="ttname"><a href="../../de/d7b/group__vec__3d.html#ga7b0f47124722e82c0f646d4627833b1f">print_vector</a></div><div class="ttdeci">LIBQUAT_DLL_EXPORTED const char * print_vector(const vec_3d *a, const char *name)</div><div class="ttdoc">Print formatted vector on stdout.</div><div class="ttdef"><b>Definition:</b> libquat_vec.c:62</div></div>
-<div class="ttc" id="agroup__vec__3d_html_gae6fb2fcf3e48f82c5ffe03bdf5539407"><div class="ttname"><a href="../../de/d7b/group__vec__3d.html#gae6fb2fcf3e48f82c5ffe03bdf5539407">dot_prod</a></div><div class="ttdeci">LIBQUAT_DLL_EXPORTED void dot_prod(const vec_3d *a, const vec_3d *b, float *o)</div><div class="ttdoc">Obtain the dot product of two 3D vectors.</div><div class="ttdef"><b>Definition:</b> libquat_vec.c:41</div></div>
-<div class="ttc" id="agroup__vec__3d_html_ga784b31d4756d5e0cbe69e182c7b9c840"><div class="ttname"><a href="../../de/d7b/group__vec__3d.html#ga784b31d4756d5e0cbe69e182c7b9c840">vector_norm</a></div><div class="ttdeci">LIBQUAT_DLL_EXPORTED void vector_norm(const vec_3d *a, float *n)</div><div class="ttdoc">Compute the norm a vector.</div><div class="ttdef"><b>Definition:</b> libquat_vec.c:70</div></div>
+<div class="ttc" id="agroup__vec__3d_html_ga7b0f47124722e82c0f646d4627833b1f"><div class="ttname"><a href="../../de/d7b/group__vec__3d.html#ga7b0f47124722e82c0f646d4627833b1f">print_vector</a></div><div class="ttdeci">LIBQUAT_DLL_EXPORTED const char * print_vector(const vec_3d *a, const char *name)</div><div class="ttdoc">Print formatted vector on stdout.</div><div class="ttdef"><b>Definition:</b> libquat_vec.cpp:117</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
