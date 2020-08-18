@@ -12,6 +12,7 @@ var group__vec__3d =
     [ "operator*", "de/d7b/group__vec__3d.html#ga9efa9988f8730b9c97ffb735d7a683f6", null ],
     [ "operator*", "de/d7b/group__vec__3d.html#ga2434c3784b03e043534b18d8ffaffdc4", null ],
     [ "operator+", "de/d7b/group__vec__3d.html#ga209140484b2f45a87807ef9a72a4e48d", null ],
+    [ "operator-", "de/d7b/group__vec__3d.html#ga19df89284eaf8fa61016b9c0d83010b8", null ],
     [ "operator-", "de/d7b/group__vec__3d.html#gafebd1c2355096e75ebc644f2a54c5587", null ],
     [ "operator<<", "de/d7b/group__vec__3d.html#ga92cc7a2258afb382589433a6f88a0f31", null ],
     [ "operator<<", "de/d7b/group__vec__3d.html#ga00532b7b8acc146fbcd6837b6fd1eea0", null ],

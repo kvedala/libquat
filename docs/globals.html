@@ -90,13 +90,6 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <div class="contents">
 <div class="textblock">Here is a list of all documented file members with links to the documentation:</div>
 
-<h3><a id="index_c"></a>- c -</h3><ul>
-<li>C
-: <a class="el" href="d7/dd9/libquat__internal_8h.html#adabdccc258e96bf2540f123a1465f983">libquat_internal.h</a>
-</li>
-</ul>
-
-
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>dot_prod()
 : <a class="el" href="de/d7b/group__vec__3d.html#ga80211fcd9720e39f842c74082e1d176c">libquat.h</a>
@@ -124,9 +117,21 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
+<li>get_conjugate()
+: <a class="el" href="dc/d9a/group__quats.html#ga3c8d83904d535e2bbabc822ca9e65683">libquat.h</a>
+, <a class="el" href="dc/d9a/group__quats.html#ga3c8d83904d535e2bbabc822ca9e65683">libquat_quat.cpp</a>
+</li>
 <li>get_cross_matrix()
 : <a class="el" href="de/d7b/group__vec__3d.html#ga0933af2498b31696047e09066ef60c6f">libquat.h</a>
 , <a class="el" href="de/d7b/group__vec__3d.html#ga0933af2498b31696047e09066ef60c6f">libquat_vec.cpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_i"></a>- i -</h3><ul>
+<li>is_libquat_valid
+: <a class="el" href="dd/dc7/libquat__err_8c.html#aa3d1bcfcdbf7741f50035db02f841cd4">libquat_err.c</a>
+, <a class="el" href="d7/dd9/libquat__internal_8h.html#aa3d1bcfcdbf7741f50035db02f841cd4">libquat_internal.h</a>
 </li>
 </ul>
 
@@ -175,34 +180,39 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
+<li>operator!()
+: <a class="el" href="dc/d9a/group__quats.html#gaf2648661a84712b60900bb213ceead28">libquat.h</a>
+, <a class="el" href="dc/d9a/group__quats.html#gaf2648661a84712b60900bb213ceead28">libquat_quat.cpp</a>
+</li>
 <li>operator*()
-: <a class="el" href="de/d7b/group__vec__3d.html#ga2434c3784b03e043534b18d8ffaffdc4">libquat.h</a>
+: <a class="el" href="de/d7b/group__vec__3d.html#ga2434c3784b03e043534b18d8ffaffdc4">libquat_vec.cpp</a>
+, <a class="el" href="de/d7b/group__vec__3d.html#ga2434c3784b03e043534b18d8ffaffdc4">libquat.h</a>
 , <a class="el" href="de/d7b/group__vec__3d.html#gac1ad92e09a38b03e14d030a23f4e30cd">libquat_vec.cpp</a>
-, <a class="el" href="de/d7b/group__vec__3d.html#ga9efa9988f8730b9c97ffb735d7a683f6">libquat.h</a>
-, <a class="el" href="de/d7b/group__vec__3d.html#ga2434c3784b03e043534b18d8ffaffdc4">libquat_vec.cpp</a>
+, <a class="el" href="de/d7b/group__vec__3d.html#gac1ad92e09a38b03e14d030a23f4e30cd">libquat.h</a>
+, <a class="el" href="dc/d9a/group__quats.html#ga5acd2139dd29db51373d65e1daaf3ef0">libquat_quat.cpp</a>
 </li>
 <li>operator+()
-: <a class="el" href="de/d7b/group__vec__3d.html#ga209140484b2f45a87807ef9a72a4e48d">libquat_vec.cpp</a>
-, <a class="el" href="de/d7b/group__vec__3d.html#ga209140484b2f45a87807ef9a72a4e48d">libquat.h</a>
+: <a class="el" href="de/d7b/group__vec__3d.html#ga209140484b2f45a87807ef9a72a4e48d">libquat.h</a>
 , <a class="el" href="dc/d9a/group__quats.html#gae2ae66578ae461944b4e0f428dc62487">libquat_quat.cpp</a>
+, <a class="el" href="de/d7b/group__vec__3d.html#ga209140484b2f45a87807ef9a72a4e48d">libquat_vec.cpp</a>
 </li>
 <li>operator-()
-: <a class="el" href="de/d7b/group__vec__3d.html#gafebd1c2355096e75ebc644f2a54c5587">libquat.h</a>
+: <a class="el" href="de/d7b/group__vec__3d.html#ga19df89284eaf8fa61016b9c0d83010b8">libquat.h</a>
 , <a class="el" href="dc/d9a/group__quats.html#gac3b5414709de381f49266d1dc091adf1">libquat_quat.cpp</a>
-, <a class="el" href="dc/d9a/group__quats.html#gac3b5414709de381f49266d1dc091adf1">libquat.h</a>
 , <a class="el" href="de/d7b/group__vec__3d.html#gafebd1c2355096e75ebc644f2a54c5587">libquat_vec.cpp</a>
+, <a class="el" href="de/d7b/group__vec__3d.html#gafebd1c2355096e75ebc644f2a54c5587">libquat.h</a>
 </li>
 <li>operator&lt;&lt;()
 : <a class="el" href="de/d7b/group__vec__3d.html#ga00532b7b8acc146fbcd6837b6fd1eea0">libquat_vec.cpp</a>
-, <a class="el" href="de/d7b/group__vec__3d.html#ga00532b7b8acc146fbcd6837b6fd1eea0">libquat.h</a>
+, <a class="el" href="de/d7b/group__vec__3d.html#ga92cc7a2258afb382589433a6f88a0f31">libquat.h</a>
 </li>
 <li>operator^()
-: <a class="el" href="de/d7b/group__vec__3d.html#ga91c8e597fb2330bad130322c8c0157b3">libquat.h</a>
-, <a class="el" href="de/d7b/group__vec__3d.html#ga91c8e597fb2330bad130322c8c0157b3">libquat_vec.cpp</a>
+: <a class="el" href="de/d7b/group__vec__3d.html#ga91c8e597fb2330bad130322c8c0157b3">libquat_vec.cpp</a>
+, <a class="el" href="de/d7b/group__vec__3d.html#ga91c8e597fb2330bad130322c8c0157b3">libquat.h</a>
 </li>
 <li>operator~()
-: <a class="el" href="de/d7b/group__vec__3d.html#ga78c0ceb43fdc9e36b3a8257eedfdba91">libquat.h</a>
-, <a class="el" href="de/d7b/group__vec__3d.html#ga78c0ceb43fdc9e36b3a8257eedfdba91">libquat_vec.cpp</a>
+: <a class="el" href="de/d7b/group__vec__3d.html#ga78c0ceb43fdc9e36b3a8257eedfdba91">libquat_vec.cpp</a>
+, <a class="el" href="de/d7b/group__vec__3d.html#ga78c0ceb43fdc9e36b3a8257eedfdba91">libquat.h</a>
 </li>
 </ul>
 

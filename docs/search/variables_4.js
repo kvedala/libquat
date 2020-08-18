@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['heading_3313',['heading',['../d2/de8/structeuler__.html#a899572e1b6a43387128de3a402a0a5f8',1,'euler_']]]
+  ['is_5flibquat_5fvalid_3315',['is_libquat_valid',['../dd/dc7/libquat__err_8c.html#aa3d1bcfcdbf7741f50035db02f841cd4',1,'is_libquat_valid():&#160;libquat_err.c'],['../d7/dd9/libquat__internal_8h.html#aa3d1bcfcdbf7741f50035db02f841cd4',1,'is_libquat_valid():&#160;libquat_err.c']]]
 ];
