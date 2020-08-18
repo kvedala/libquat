@@ -63,22 +63,20 @@ float operator*(const vec_3d &a, const vec_3d &b)
 
 vec_3d operator*(const float a, const vec_3d &b)
 {
-    vec_3d result = {
-        .x = a * b.x,
-        .y = a * b.y,
-        .z = a * b.z,
-    };
+    vec_3d result = {0.f};
+    result.x = a * b.x;
+    result.y = a * b.y;
+    result.z = a * b.z;
 
     return result;
 }
 
 vec_3d operator*(const vec_3d &a, const float b)
 {
-    vec_3d result = {
-        .x = a.x * b,
-        .y = a.y * b,
-        .z = a.z * b,
-    };
+    vec_3d result = {0.f};
+    result.x = a.x * b;
+    result.y = a.y * b;
+    result.z = a.z * b;
 
     return result;
 }
