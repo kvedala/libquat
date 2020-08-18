@@ -72,7 +72,7 @@ jobs:
           if not cpp_files:
             sys.exit(0)
 
-          subprocess.run(["clang-tidy-10", "--fix", "-p=build", "--extra-arg=-Iinclude", *cpp_files, "--"],
+          subprocess.run(["clang-tidy-10", "--fix", "-p=build", "--extra-arg=-Iinclude", "--extra-arg=-DLIBQUAT_MAJOR_VER=0", "--extra-arg=-DLIBQUAT_MINOR_VER=0", *cpp_files, "--"],
               check=True, text=True, stderr=subprocess.STDOUT)
 
           # for cpp_file in cpp_files:
