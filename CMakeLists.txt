@@ -31,22 +31,22 @@ set(SOURCE_FILES
     src/libquat_internal.c
 )
 
-set(CMAKE_BUILD_STATIC_LIBS ON)
 add_compile_definitions(BUILDING_LIBQUAT)
-if(BUILD_STATIC_LIBS)
-	set(LIBTYPE STATIC)
-else ()
-	set(LIBTYPE SHARED)
-	if (WIN32)
-		configure_file( src/version.rc.in
-                        ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc @ONLY
-        )
-		set (SOURCE_FILES ${SOURCE_FILES} ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc)
-    endif()
-endif()
+# set(CMAKE_BUILD_STATIC_LIBS ON)
+# if(BUILD_STATIC_LIBS)
+# 	set(LIBTYPE STATIC)
+# else ()
+# 	set(LIBTYPE SHARED)
+# 	if (WIN32)
+# 		configure_file( src/version.rc.in
+#                         ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc @ONLY
+#         )
+# 		set (SOURCE_FILES ${SOURCE_FILES} ${CMAKE_CURRENT_BINARY_DIR}/src/version.rc)
+#     endif()
+# endif()
 
 cmake_policy(SET CMP0042 NEW)
-add_library (libquat ${LIBTYPE} ${SOURCE_FILES})
+add_library (libquat STATIC ${SOURCE_FILES})
 
 target_include_directories(libquat PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -55,7 +55,6 @@ target_include_directories(libquat PUBLIC
 set_target_properties(libquat PROPERTIES
     VERSION ${LIBQUAT_VERSION_MAJOR}.${LIBQUAT_VERSION_MINOR}
     SOVERSION ${LIBQUAT_VERSION_MAJOR}
-    PUBLIC_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h
     INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
@@ -76,7 +75,6 @@ install(TARGETS libquat
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 install(EXPORT libquat_export DESTINATION cmake)
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" DESTINATION include)

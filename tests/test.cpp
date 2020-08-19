@@ -15,8 +15,7 @@
  *
  * @return int
  */
-auto main() -> int
-{
+auto main() -> int {
     vec_3d a = {1.f, 2.f, 3.f};
     vec_3d b = {1.f, 1.f, 1.f};
     vec_3d c = {0.f};

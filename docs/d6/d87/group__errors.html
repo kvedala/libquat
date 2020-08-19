@@ -139,11 +139,11 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094"></a>LIBQUAT_DIV_BY_ZERO&#160;</td><td class="fielddoc"><p>Division by zero </p>
 </td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a> = 0,      <span class="comment">/**&lt; No error */</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a>, <span class="comment">/**&lt; header and library version do not match */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094">LIBQUAT_DIV_BY_ZERO</a>, <span class="comment">/**&lt; Division by zero */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    } <a class="code" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a>;</div>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;             {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a> = 0,      <span class="comment">/**&lt; No error */</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a>, <span class="comment">/**&lt; header and library version do not match */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094">LIBQUAT_DIV_BY_ZERO</a>, <span class="comment">/**&lt; Division by zero */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <a class="code" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a>;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -170,19 +170,18 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>error description string </dd></dl>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">switch</span> (err_code)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;OK.&quot;</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094">LIBQUAT_DIV_BY_ZERO</a>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Division by zero.&quot;</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Header and library version do not match&quot;</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown error type.&quot;</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                             {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">switch</span> (err_code) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;OK.&quot;</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094">LIBQUAT_DIV_BY_ZERO</a>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Division by zero.&quot;</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Header and library version do not match&quot;</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown error type.&quot;</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -208,28 +207,29 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>error of type <a class="el" href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a> </dd></dl>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (is_libquat_valid)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d7/dd9/libquat__internal_8h.html#a2eaa62ce6a264df253a364d54eea566f">libquat_major_ver</a> != major_ver)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    is_libquat_valid = 1;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                        {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../dd/dc7/libquat__err_8c.html#aa3d1bcfcdbf7741f50035db02f841cd4">is_libquat_valid</a>) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d7/dd9/libquat__internal_8h.html#a2eaa62ce6a264df253a364d54eea566f">libquat_major_ver</a> != major_ver) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../dd/dc7/libquat__err_8c.html#aa3d1bcfcdbf7741f50035db02f841cd4">is_libquat_valid</a> = 1;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a></div><div class="ttdeci">@ LIBQUAT_BAD_VERSION</div><div class="ttdef"><b>Definition:</b> libquat.h:42</div></div>
-<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094">LIBQUAT_DIV_BY_ZERO</a></div><div class="ttdeci">@ LIBQUAT_DIV_BY_ZERO</div><div class="ttdef"><b>Definition:</b> libquat.h:43</div></div>
-<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a></div><div class="ttdeci">@ LIBQUAT_OK</div><div class="ttdef"><b>Definition:</b> libquat.h:41</div></div>
+<div class="ttc" id="alibquat__err_8c_html_aa3d1bcfcdbf7741f50035db02f841cd4"><div class="ttname"><a href="../../dd/dc7/libquat__err_8c.html#aa3d1bcfcdbf7741f50035db02f841cd4">is_libquat_valid</a></div><div class="ttdeci">char is_libquat_valid</div><div class="ttdef"><b>Definition:</b> libquat_err.c:13</div></div>
+<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbac1f90fb81272ea404be96128940e5a65">LIBQUAT_BAD_VERSION</a></div><div class="ttdeci">@ LIBQUAT_BAD_VERSION</div><div class="ttdef"><b>Definition:</b> libquat.h:40</div></div>
+<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094">LIBQUAT_DIV_BY_ZERO</a></div><div class="ttdeci">@ LIBQUAT_DIV_BY_ZERO</div><div class="ttdef"><b>Definition:</b> libquat.h:41</div></div>
+<div class="ttc" id="agroup__errors_html_gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd"><div class="ttname"><a href="../../d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dba5352dc8a8510f122b921ba0bea5212fd">LIBQUAT_OK</a></div><div class="ttdeci">@ LIBQUAT_OK</div><div class="ttdef"><b>Definition:</b> libquat.h:39</div></div>
 <div class="ttc" id="alibquat__internal_8h_html_a2eaa62ce6a264df253a364d54eea566f"><div class="ttname"><a href="../../d7/dd9/libquat__internal_8h.html#a2eaa62ce6a264df253a364d54eea566f">libquat_major_ver</a></div><div class="ttdeci">static const char libquat_major_ver</div><div class="ttdef"><b>Definition:</b> libquat_internal.h:9</div></div>
-<div class="ttc" id="agroup__errors_html_ga42cbbc9e0fbc3c4132109b82258902db"><div class="ttname"><a href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a></div><div class="ttdeci">libquat_err</div><div class="ttdef"><b>Definition:</b> libquat.h:40</div></div>
+<div class="ttc" id="agroup__errors_html_ga42cbbc9e0fbc3c4132109b82258902db"><div class="ttname"><a href="../../d6/d87/group__errors.html#ga42cbbc9e0fbc3c4132109b82258902db">libquat_err</a></div><div class="ttdeci">libquat_err</div><div class="ttdef"><b>Definition:</b> libquat.h:38</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

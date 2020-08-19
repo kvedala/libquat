@@ -15,8 +15,12 @@
 #include "libquat.h"
 #include "libquat_internal.h"
 
-vec_3d operator-(const vec_3d &a, const vec_3d &b)
-{
+vec_3d operator-(const vec_3d &a) {
+    vec_3d ret = {-a.x, -a.y, -a.z};
+    return ret;
+}
+
+vec_3d operator-(const vec_3d &a, const vec_3d &b) {
     vec_3d result = {0.f};
 #ifdef LIBQUAT_ARM
     arm_sub_f32((float *)&a, (float *)&b, (float *)&result);
@@ -31,8 +35,7 @@ vec_3d operator-(const vec_3d &a, const vec_3d &b)
 
 vec_3d vector_sub(const vec_3d *a, const vec_3d *b) { return *a - *b; }
 
-vec_3d operator+(const vec_3d &a, const vec_3d &b)
-{
+vec_3d operator+(const vec_3d &a, const vec_3d &b) {
     vec_3d result = {0.f};
 #ifdef LIBQUAT_ARM
     arm_sub_f32((float *)&a, (float *)&b, (float *)&result);
@@ -47,8 +50,7 @@ vec_3d operator+(const vec_3d &a, const vec_3d &b)
 
 vec_3d vector_add(const vec_3d *a, const vec_3d *b) { return *a + *b; }
 
-float operator*(const vec_3d &a, const vec_3d &b)
-{
+float operator*(const vec_3d &a, const vec_3d &b) {
     float result = 0.f;
 #ifdef LIBQUAT_ARM
     arm_dot_prod_f32((float *)a, (float *)b, result);
@@ -61,8 +63,7 @@ float operator*(const vec_3d &a, const vec_3d &b)
     return result;
 }
 
-vec_3d operator*(const float a, const vec_3d &b)
-{
+vec_3d operator*(const float a, const vec_3d &b) {
     vec_3d result = {0.f};
     result.x = a * b.x;
     result.y = a * b.y;
@@ -71,8 +72,7 @@ vec_3d operator*(const float a, const vec_3d &b)
     return result;
 }
 
-vec_3d operator*(const vec_3d &a, const float b)
-{
+vec_3d operator*(const vec_3d &a, const float b) {
     vec_3d result = {0.f};
     result.x = a.x * b;
     result.y = a.y * b;
@@ -83,8 +83,17 @@ vec_3d operator*(const vec_3d &a, const float b)
 
 float dot_prod(const vec_3d *a, const vec_3d *b) { return *a * *b; }
 
-vec_3d operator^(const vec_3d &a, const vec_3d &b)
-{
+vec_3d operator/(const vec_3d &in_quat, const float scalar) {
+    vec_3d temp = {0.f};
+
+    temp.x = in_quat.x / scalar;
+    temp.y = in_quat.y / scalar;
+    temp.z = in_quat.z / scalar;
+
+    return temp;
+}
+
+vec_3d operator^(const vec_3d &a, const vec_3d &b) {
     vec_3d out{0.f};  // better this way to avoid copying results to input
                       // vectors themselves
     out.x = a.y * b.z - a.z * b.y;
@@ -96,8 +105,7 @@ vec_3d operator^(const vec_3d &a, const vec_3d &b)
 
 vec_3d vector_prod(const vec_3d *a, const vec_3d *b) { return *a ^ *b; }
 
-std::ostream &operator<<(std::ostream &out, vec_3d const &v)
-{
+std::ostream &operator<<(std::ostream &out, vec_3d const &v) {
     const int width = 10;
     const char separator = ' ';
 
@@ -112,16 +120,14 @@ std::ostream &operator<<(std::ostream &out, vec_3d const &v)
     return out;
 }
 
-const char *print_vector(const vec_3d *a, const char *name)
-{
+const char *print_vector(const vec_3d *a, const char *name) {
     static char vec_str[100];  // NOLINT
     snprintf(vec_str, 99,      // NOLINT
              "vec(%s) = (%.3g)i + (%.3g)j + (%.3g)k\n", name, a->x, a->y, a->z);
     return vec_str;
 }
 
-float operator~(const vec_3d &a)
-{
+float operator~(const vec_3d &a) {
     float result = a * a;
 #ifdef LIBQUAT_ARM
     arm_sqrt_f32(&result, result);
@@ -134,13 +140,11 @@ float operator~(const vec_3d &a)
 
 float vector_norm(const vec_3d *a) { return ~(*a); }
 
-vec_3d unit_vec(const vec_3d *a)
-{
+vec_3d unit_vec(const vec_3d *a) {
     float norm = ~(*a);
     vec_3d result = {0.f};
 
-    if (fabsf(norm) < LIBQUAT_EPSILON)
-    {
+    if (fabsf(norm) < LIBQUAT_EPSILON) {
         std::cerr << __func__ << ": Division by zero.";
         return result;
     }
@@ -155,8 +159,7 @@ vec_3d unit_vec(const vec_3d *a)
     return result;
 }
 
-mat_3x3 get_cross_matrix(const vec_3d *a)
-{
+mat_3x3 get_cross_matrix(const vec_3d *a) {
     mat_3x3 A = {0., -a->z, a->y, a->z, 0., -a->x, -a->y, a->x, 0.};
     return A;
 }
