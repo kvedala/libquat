@@ -83,6 +83,16 @@ vec_3d operator*(const vec_3d &a, const float b) {
 
 float dot_prod(const vec_3d *a, const vec_3d *b) { return *a * *b; }
 
+vec_3d operator/(const vec_3d &in_quat, const float scalar) {
+    vec_3d temp = {0.f};
+
+    temp.x = in_quat.x / scalar;
+    temp.y = in_quat.y / scalar;
+    temp.z = in_quat.z / scalar;
+
+    return temp;
+}
+
 vec_3d operator^(const vec_3d &a, const vec_3d &b) {
     vec_3d out{0.f};  // better this way to avoid copying results to input
                       // vectors themselves
