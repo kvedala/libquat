@@ -130,7 +130,7 @@ quaternion operator!(const quaternion &in_quat1) {
 
 quaternion get_conjugate(const quaternion *in_quat1) {
     if (!in_quat1) {
-        fprintf(stderr, "%s: Invalid input.", __func__);
+        std::cerr << __func__ << ": Invalid input.\n";
         return {0.f};
     }
 
@@ -184,4 +184,13 @@ float operator~(const quaternion &in_quat1) {
     temp += in_quat1.dual * in_quat1.dual;
 
     return sqrtf(temp);
+}
+
+quaternion get_inverse(const quaternion &quat) {
+    float mag = ~quat;  // get norm
+    if (mag == 0) {
+        std::cerr << __func__ << ": Inverse does not exist\n";
+    }
+    quaternion temp = !quat;  // get conjugate
+    return temp / (mag * mag);
 }
