@@ -143,6 +143,8 @@ Functions</h2></td></tr>
 <tr class="separator:gac1ad92e09a38b03e14d030a23f4e30cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9efa9988f8730b9c97ffb735d7a683f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dd9/libquat__internal_8h.html#abe3d522e94b48b15a8663db695803a8c">LIBQUAT_DLL_EXPORTED</a> <a class="el" href="../../de/d7b/group__vec__3d.html#gaf9ee870d4922e488bdd3e7262485c270">vec_3d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d7b/group__vec__3d.html#ga9efa9988f8730b9c97ffb735d7a683f6">operator*</a> (const <a class="el" href="../../de/d7b/group__vec__3d.html#gaf9ee870d4922e488bdd3e7262485c270">vec_3d</a> &amp;a, const float b)</td></tr>
 <tr class="separator:ga9efa9988f8730b9c97ffb735d7a683f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bb5290a5de36c1b2ba18af0f9594755"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dd9/libquat__internal_8h.html#abe3d522e94b48b15a8663db695803a8c">LIBQUAT_DLL_EXPORTED</a> <a class="el" href="../../de/d7b/group__vec__3d.html#gaf9ee870d4922e488bdd3e7262485c270">vec_3d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d7b/group__vec__3d.html#ga1bb5290a5de36c1b2ba18af0f9594755">operator/</a> (const <a class="el" href="../../de/d7b/group__vec__3d.html#gaf9ee870d4922e488bdd3e7262485c270">vec_3d</a> &amp;a, const float b)</td></tr>
+<tr class="separator:ga1bb5290a5de36c1b2ba18af0f9594755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga91c8e597fb2330bad130322c8c0157b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dd9/libquat__internal_8h.html#abe3d522e94b48b15a8663db695803a8c">LIBQUAT_DLL_EXPORTED</a> <a class="el" href="../../de/d7b/group__vec__3d.html#gaf9ee870d4922e488bdd3e7262485c270">vec_3d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d7b/group__vec__3d.html#ga91c8e597fb2330bad130322c8c0157b3">operator^</a> (const <a class="el" href="../../de/d7b/group__vec__3d.html#gaf9ee870d4922e488bdd3e7262485c270">vec_3d</a> &amp;a, const <a class="el" href="../../de/d7b/group__vec__3d.html#gaf9ee870d4922e488bdd3e7262485c270">vec_3d</a> &amp;b)</td></tr>
 <tr class="separator:ga91c8e597fb2330bad130322c8c0157b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga78c0ceb43fdc9e36b3a8257eedfdba91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dd9/libquat__internal_8h.html#abe3d522e94b48b15a8663db695803a8c">LIBQUAT_DLL_EXPORTED</a> float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d7b/group__vec__3d.html#ga78c0ceb43fdc9e36b3a8257eedfdba91">operator~</a> (const <a class="el" href="../../de/d7b/group__vec__3d.html#gaf9ee870d4922e488bdd3e7262485c270">vec_3d</a> &amp;a)</td></tr>
@@ -235,10 +237,10 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the <code>3x3</code> matrix for the cross product operator \(\left(\vec{a}\times\right)\) </dd></dl>
-<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                          {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="../../d9/d8b/structmat__3x3__.html">mat_3x3</a> A = {0., -a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a>, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a>, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a>, 0., -a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a>, -a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a>, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a>, 0.};</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span> A;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                          {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="../../d9/d8b/structmat__3x3__.html">mat_3x3</a> A = {0., -a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a>, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a>, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a>, 0., -a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a>, -a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a>, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a>, 0.};</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">return</span> A;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -521,6 +523,51 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ga1bb5290a5de36c1b2ba18af0f9594755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1bb5290a5de36c1b2ba18af0f9594755">&#9670;&nbsp;</a></span>operator/()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/dd9/libquat__internal_8h.html#abe3d522e94b48b15a8663db695803a8c">LIBQUAT_DLL_EXPORTED</a> <a class="el" href="../../de/d7b/group__vec__3d.html#gaf9ee870d4922e488bdd3e7262485c270">vec_3d</a> operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/d7b/group__vec__3d.html#gaf9ee870d4922e488bdd3e7262485c270">vec_3d</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Scalar division of a 3D vector. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>vector to divide </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>scalar divisor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>resulting quotient </dd></dl>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                            {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="../../d5/db4/structvec__3d__.html">vec_3d</a> temp = {0.f};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    temp.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a> = in_quat.x / scalar;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    temp.<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a> = in_quat.y / scalar;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    temp.<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> = in_quat.z / scalar;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> temp;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ga92cc7a2258afb382589433a6f88a0f31"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga92cc7a2258afb382589433a6f88a0f31">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
 
@@ -590,20 +637,20 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>formatted stream </dd></dl>
-<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                                         {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> width = 10;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> separator = <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;&lt;&quot;</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    out &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/left.html">std::left</a> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setw.html">std::setw</a>(width) &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setfill.html">std::setfill</a>(separator) &lt;&lt; v.x;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/left.html">std::left</a> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setw.html">std::setw</a>(width) &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setfill.html">std::setfill</a>(separator)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        &lt;&lt; v.y;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/left.html">std::left</a> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setw.html">std::setw</a>(width) &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setfill.html">std::setfill</a>(separator)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        &lt;&lt; v.z;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                                         {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> width = 10;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> separator = <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;&lt;&quot;</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    out &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/left.html">std::left</a> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setw.html">std::setw</a>(width) &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setfill.html">std::setfill</a>(separator) &lt;&lt; v.x;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/left.html">std::left</a> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setw.html">std::setw</a>(width) &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setfill.html">std::setfill</a>(separator)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        &lt;&lt; v.y;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/left.html">std::left</a> &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setw.html">std::setw</a>(width) &lt;&lt; <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/manip/setfill.html">std::setfill</a>(separator)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        &lt;&lt; v.z;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -649,15 +696,15 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>resultant vector \(\vec{o}=\vec{a}\times\vec{b}\) </dd></dl>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                   {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="../../d5/db4/structvec__3d__.html">vec_3d</a> out{0.f};  <span class="comment">// better this way to avoid copying results to input</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                      <span class="comment">// vectors themselves</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    out.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a> = a.<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> - a.<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    out.y = -a.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> + a.<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    out.z = a.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a> - a.<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                   {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="../../d5/db4/structvec__3d__.html">vec_3d</a> out{0.f};  <span class="comment">// better this way to avoid copying results to input</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                      <span class="comment">// vectors themselves</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    out.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a> = a.<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> - a.<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    out.y = -a.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> + a.<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    out.z = a.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a> - a.<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a> * b.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -686,16 +733,16 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>n norm of the given vector </dd></dl>
-<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                 {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">float</span> result = a * a;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#ifdef LIBQUAT_ARM</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    arm_sqrt_f32(&amp;result, result);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    result = sqrtf(result);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                 {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">float</span> result = a * a;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#ifdef LIBQUAT_ARM</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    arm_sqrt_f32(&amp;result, result);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    result = sqrtf(result);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -732,12 +779,12 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>formatted vector for printing </dd></dl>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                                            {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> vec_str[100];  <span class="comment">// NOLINT</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/c/fprintf.html">snprintf</a>(vec_str, 99,      <span class="comment">// NOLINT</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;             <span class="stringliteral">&quot;vec(%s) = (%.3g)i + (%.3g)j + (%.3g)k\n&quot;</span>, name, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a>, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a>, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a>);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> vec_str;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                                            {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> vec_str[100];  <span class="comment">// NOLINT</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/c/fprintf.html">snprintf</a>(vec_str, 99,      <span class="comment">// NOLINT</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;             <span class="stringliteral">&quot;vec(%s) = (%.3g)i + (%.3g)j + (%.3g)k\n&quot;</span>, name, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a>, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a>, a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> vec_str;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -766,24 +813,24 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unit vector in the direction of \(\vec{a}\) </dd></dl>
-<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                 {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">float</span> norm = ~(*a);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="../../d5/db4/structvec__3d__.html">vec_3d</a> result = {0.f};</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (fabsf(norm) &lt; <a class="code" href="../../de/d5a/group__quaternions.html#ga7cf88e49975f2d3f437c168043fe2746">LIBQUAT_EPSILON</a>) {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cerr</a> &lt;&lt; __func__ &lt;&lt; <span class="stringliteral">&quot;: Division by zero.&quot;</span>;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (norm != 1.F)  <span class="comment">// perform division only if needed</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        result.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a> = a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a> / norm;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        result.<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a> = a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a> / norm;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        result.<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> = a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> / norm;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                 {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">float</span> norm = ~(*a);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="../../d5/db4/structvec__3d__.html">vec_3d</a> result = {0.f};</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (fabsf(norm) &lt; <a class="code" href="../../de/d5a/group__quaternions.html#ga7cf88e49975f2d3f437c168043fe2746">LIBQUAT_EPSILON</a>) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="codeRef" target="_blank" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::cerr</a> &lt;&lt; __func__ &lt;&lt; <span class="stringliteral">&quot;: Division by zero.&quot;</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span> (norm != 1.F)  <span class="comment">// perform division only if needed</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        result.<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a> = a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a53462a5a195c9e16fb584f73fd66c3d0">x</a> / norm;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        result.<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a> = a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a76098d39a382838df3b4b48c3443413b">y</a> / norm;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        result.<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> = a-&gt;<a class="code" href="../../d5/db4/structvec__3d__.html#a3339a40de7385fa55bee30be81c098c6">z</a> / norm;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -852,7 +899,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>norm of the given vector </dd></dl>
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{ <span class="keywordflow">return</span> ~(*a); }</div>
+<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{ <span class="keywordflow">return</span> ~(*a); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -892,7 +939,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>resultant vector \(\vec{o}=\vec{a}\times\vec{b}\) </dd></dl>
-<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{ <span class="keywordflow">return</span> *a ^ *b; }</div>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{ <span class="keywordflow">return</span> *a ^ *b; }</div>
 </div><!-- fragment -->
 </div>
 </div>

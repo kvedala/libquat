@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libQuat: Main Page</title>
+<title>libQuat: libQuat</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,11 +87,32 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">libQuat Documentation</div>  </div>
+<div class="title">libQuat </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="mainpage"></a></p>
+<p><a href="https://gitpod.io/#https://github.com/kvedala/libquat"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code" class="inline"/></a> <a href="https://lgtm.com/projects/g/kvedala/libquat/context:cpp"><img src="https://img.shields.io/lgtm/grade/cpp/g/kvedala/libquat.svg?logo=lgtm&amp;logoWidth=18" alt="Language grade: C/C++" style="pointer-events: none;" class="inline"/></a> <img src="https://img.shields.io/github/repo-size/kvedala/libquat?color=red&amp;style=flat-square" alt="GitHub repo size" class="inline"/> <a href="https://github.com/kvedala/libquat/actions?query=workflow%3A%22C%2FC%2B%2B+CI%22"><img src="https://github.com/kvedala/libquat/workflows/C/C++%20CI/badge.svg" alt="C/C++ CI" style="pointer-events: none;" class="inline"/></a></p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Overview</h1>
+<p>Simple library for operations on 3D vectors and quaternions.</p>
+<p><a href="https://kvedala.github.io/libquat">Online Documentation</a></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Build</h1>
+<p>There are no external dependencies for this library other than C++ STL.</p><ol type="1">
+<li>Configure step Issue the following command from the root folder of the repo. This created the <code>build</code> directory where the library and programs will get built. <div class="fragment"><div class="line">$ cmake -B build -S.</div>
+</div><!-- fragment --></li>
+<li>Compilation step Issue the following command from the root folder of the repo. This will compile the static library and will be available as <code>libquat.lib</code> or <code>libquat.a</code>. The configuration option <code>RelWithDebInfo</code> will create a release build with some debug info. For a full release with no debug info, change it to <code>Release</code>. The installation folder can also be specified here. <div class="fragment"><div class="line">$ cmake --build build -t all [--config RelWithDebInfo] [-DCMAKE_INSTALL_PREFIX=/opt/local]</div>
+</div><!-- fragment --></li>
+<li>Install the library This command will install the static library and the header file <code><a class="el" href="dc/d7a/libquat_8h.html" title="Library that provides data types for 3D vectors and quaternions, inter-conversions and related operat...">libquat.h</a></code> to the system. <div class="fragment"><div class="line">$ cmake --build build -t install</div>
+</div><!-- fragment --></li>
+<li>Compile custom programs To incorporate to your programs, all functions and their descriptions are available in <code><a class="el" href="dc/d7a/libquat_8h.html" title="Library that provides data types for 3D vectors and quaternions, inter-conversions and related operat...">libquat.h</a></code> and also at the online link above and link against the compiled library.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Contribute</h1>
+<p>We welcome any contributions and suggestions. Feel free to submit a pull-quest with appropriate info. Thank you in advance. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

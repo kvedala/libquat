@@ -8,6 +8,7 @@ var libquat__vec_8cpp =
     [ "operator+", "de/d7b/group__vec__3d.html#ga209140484b2f45a87807ef9a72a4e48d", null ],
     [ "operator-", "de/d7b/group__vec__3d.html#ga19df89284eaf8fa61016b9c0d83010b8", null ],
     [ "operator-", "de/d7b/group__vec__3d.html#gafebd1c2355096e75ebc644f2a54c5587", null ],
+    [ "operator/", "de/d7b/group__vec__3d.html#ga1bb5290a5de36c1b2ba18af0f9594755", null ],
     [ "operator<<", "de/d7b/group__vec__3d.html#ga00532b7b8acc146fbcd6837b6fd1eea0", null ],
     [ "operator^", "de/d7b/group__vec__3d.html#ga91c8e597fb2330bad130322c8c0157b3", null ],
     [ "operator~", "de/d7b/group__vec__3d.html#ga78c0ceb43fdc9e36b3a8257eedfdba91", null ],
