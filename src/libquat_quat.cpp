@@ -114,7 +114,7 @@ quaternion quaternion_multiply(const quaternion *in_quat1,
         return {0.f};
     }
 
-    return *in_quat1 + *in_quat2;
+    return *in_quat1 * *in_quat2;
 }
 
 quaternion operator!(const quaternion &in_quat1) {
