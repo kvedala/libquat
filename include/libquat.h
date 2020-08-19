@@ -404,6 +404,14 @@ LIBQUAT_DLL_EXPORTED vec_3d operator*(const float a, const vec_3d &b);
 LIBQUAT_DLL_EXPORTED vec_3d operator*(const vec_3d &a, const float b);
 
 /**
+ * Scalar division of a 3D vector.
+ * @param[in] a vector to divide
+ * @param[in] b scalar divisor
+ * @returns resulting quotient
+ */
+LIBQUAT_DLL_EXPORTED vec_3d operator/(const vec_3d &a, const float b);
+
+/**
  * Compute the vector product of two 3d vectors.
  * @f[\begin{align*}
  * \vec{a}\times\vec{b} &= \begin{vmatrix}
@@ -495,6 +503,30 @@ LIBQUAT_DLL_EXPORTED quaternion operator*(const quaternion &in_quat1,
                                           const quaternion &in_quat2);
 
 /**
+ * Scalar multiplication of a 3D quaternion.
+ * @param[in] a pre-multiplying scalar
+ * @param[in] b second quaternion
+ * @returns resulting dot product
+ */
+LIBQUAT_DLL_EXPORTED quaternion operator*(const float a, const quaternion &b);
+
+/**
+ * Scalar multiplication of a 3D quaternion.
+ * @param[in] a pre-multiplying quaternion
+ * @param[in] b post-multiplying scalar
+ * @returns resulting product
+ */
+LIBQUAT_DLL_EXPORTED quaternion operator*(const quaternion &a, const float b);
+
+/**
+ * Scalar division of a 3D quaternion.
+ * @param[in] a quaternion to divide
+ * @param[in] b scalar divisor
+ * @returns resulting quotient
+ */
+LIBQUAT_DLL_EXPORTED quaternion operator/(const quaternion &a, const float b);
+
+/**
  * @brief Get conjugate of a quaternion. The conjugate is defined as:
  * \f[
  * \mathbf{A}^* = q_0- i \vec{q}
@@ -504,6 +536,17 @@ LIBQUAT_DLL_EXPORTED quaternion operator*(const quaternion &in_quat1,
  * @return conjugate of the input quaternion
  */
 LIBQUAT_DLL_EXPORTED quaternion operator!(const quaternion &in_quat1);
+
+/**
+ * Compute the norm a quaternion.
+ * @f[
+ * \lVert A\rVert = \sqrt{q_0^2 + \vec{a}\cdot\vec{a}}
+ * @f]
+ * @param[in] a input vector
+ * @returns n norm of the given vector
+ */
+LIBQUAT_DLL_EXPORTED float operator~(const quaternion &a);
+
 /** @} */
 
 #endif

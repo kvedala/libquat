@@ -73,6 +73,39 @@ quaternion operator*(const quaternion &in_quat1, const quaternion &in_quat2) {
     return temp;
 }
 
+quaternion operator*(const float scalar, const quaternion &in_quat) {
+    quaternion temp = {0.f};
+
+    temp.w = in_quat.q0 * scalar;
+    temp.q1 = in_quat.q1 * scalar;
+    temp.q2 = in_quat.q2 * scalar;
+    temp.q3 = in_quat.q3 * scalar;
+
+    return temp;
+}
+
+quaternion operator*(const quaternion &in_quat, const float scalar) {
+    quaternion temp = {0.f};
+
+    temp.w = in_quat.q0 * scalar;
+    temp.q1 = in_quat.q1 * scalar;
+    temp.q2 = in_quat.q2 * scalar;
+    temp.q3 = in_quat.q3 * scalar;
+
+    return temp;
+}
+
+quaternion operator/(const quaternion &in_quat, const float scalar) {
+    quaternion temp = {0.f};
+
+    temp.w = in_quat.q0 / scalar;
+    temp.q1 = in_quat.q1 / scalar;
+    temp.q2 = in_quat.q2 / scalar;
+    temp.q3 = in_quat.q3 / scalar;
+
+    return temp;
+}
+
 quaternion quaternion_multiply(const quaternion *in_quat1,
                                const quaternion *in_quat2) {
     if (!in_quat1 || !in_quat2)  // if null
@@ -142,4 +175,13 @@ quaternion quaternion_sub(const quaternion *in_quat1,
     }
 
     return *in_quat1 - *in_quat2;
+}
+
+float operator~(const quaternion &in_quat1) {
+    float temp = 0.f;
+
+    temp += in_quat1.q0 * in_quat1.q0;
+    temp += in_quat1.dual * in_quat1.dual;
+
+    return sqrtf(temp);
 }
