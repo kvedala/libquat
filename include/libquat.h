@@ -326,7 +326,7 @@ LIBQUAT_DLL_EXPORTED quaternion get_conjugate(const quaternion *in_quat1);
  * @return inverse of the input quaternion if exists
  * @returns NULL quaternion if inverse does not exist
  */
-LIBQUAT_DLL_EXPORTED quaternion get_inverse(const quaternion &in_quat1);
+LIBQUAT_DLL_EXPORTED quaternion get_inverse(const quaternion *in_quat1);
 
 /** @} */
 
@@ -560,6 +560,15 @@ LIBQUAT_DLL_EXPORTED quaternion operator!(const quaternion &in_quat1);
  */
 LIBQUAT_DLL_EXPORTED float operator~(const quaternion &a);
 
+/**
+ * @brief Get inverse of a quaternion. The inverse is defined as:
+ * \f[
+ * \mathbf{A}^{-1} = \frac{\mathbf{A}^*}{\left\lVert\mathbf{A}\right\rVert}
+ * \f]
+ * @param[in] a input quaternion
+ * @returns resultant quaternion
+ */
+LIBQUAT_DLL_EXPORTED quaternion operator+(const quaternion &a);
 /** @} */
 
 #endif

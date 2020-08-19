@@ -186,7 +186,7 @@ float operator~(const quaternion &in_quat1) {
     return sqrtf(temp);
 }
 
-quaternion get_inverse(const quaternion &quat) {
+quaternion operator+(const quaternion &quat) {
     float mag = ~quat;  // get norm
     if (mag == 0) {
         std::cerr << __func__ << ": Inverse does not exist\n";
@@ -194,3 +194,5 @@ quaternion get_inverse(const quaternion &quat) {
     quaternion temp = !quat;  // get conjugate
     return temp / (mag * mag);
 }
+
+quaternion get_inverse(const quaternion *quat) { return +(*quat); }
