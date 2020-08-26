@@ -26,8 +26,9 @@ var NAVTREE =
 [
   [ "libQuat", "index.html", [
     [ "Overview", "index.html#autotoc_md0", null ],
-    [ "Build", "index.html#autotoc_md1", null ],
-    [ "Contribute", "index.html#autotoc_md2", null ],
+    [ "Features", "index.html#autotoc_md1", null ],
+    [ "Build", "index.html#autotoc_md2", null ],
+    [ "Contribute", "index.html#autotoc_md3", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
