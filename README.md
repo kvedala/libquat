@@ -11,6 +11,12 @@ Simple library for operations on 3D vectors and quaternions.
 
 [Online Documentation](https://kvedala.github.io/libquat)
 
+## Features 
+* Simple interface in both C and C++
+* Can be expoted to a shared library for use in any other high-level languages, including python. 
+* Utilizes pragma checks to utilize hardware floating point units (FPU), when available on ARM Cortex-M microcontrollers.
+* Ease access in a variety of forms to individual elements of vectors and quaternions.
+
 ## Build
 There are no external dependencies for this library other than C++ STL. 
 1. Configure step
