@@ -1,6 +1,5 @@
 var libquat_8h =
 [
-    [ "LIBQUAT_DLL_EXPORTED", "de/d5a/group__quaternions.html#gabe3d522e94b48b15a8663db695803a8c", null ],
     [ "LIBQUAT_EPSILON", "de/d5a/group__quaternions.html#ga7cf88e49975f2d3f437c168043fe2746", null ],
     [ "dual_quat", "d4/d69/group__dual__quats.html#ga27005601c47e5bb7aafe77659e76c88f", null ],
     [ "euler", "dc/d9a/group__quats.html#ga8cc5e5b7a5fa492423ecf034c8bb52bd", null ],
@@ -13,7 +12,7 @@ var libquat_8h =
       [ "LIBQUAT_DIV_BY_ZERO", "d6/d87/group__errors.html#gga42cbbc9e0fbc3c4132109b82258902dbaa11e73dc0f65e06bdf0a73c4bc9f7094", null ]
     ] ],
     [ "dot_prod", "de/d7b/group__vec__3d.html#ga80211fcd9720e39f842c74082e1d176c", null ],
-    [ "err_to_str", "d6/d87/group__errors.html#ga31d07d4b98741c0bf5e1800c01c02ed7", null ],
+    [ "err_to_str", "d6/d87/group__errors.html#gad4f58ad04564529ca7718136734ea12d", null ],
     [ "euler_from_quat", "dc/d9a/group__quats.html#ga55579c9d0dab6fef004bf64d9de349dd", null ],
     [ "get_conjugate", "dc/d9a/group__quats.html#ga3c8d83904d535e2bbabc822ca9e65683", null ],
     [ "get_cross_matrix", "de/d7b/group__vec__3d.html#ga0933af2498b31696047e09066ef60c6f", null ],
@@ -34,12 +33,12 @@ var libquat_8h =
     [ "operator-", "de/d7b/group__vec__3d.html#gafebd1c2355096e75ebc644f2a54c5587", null ],
     [ "operator/", "dc/d9a/group__quats.html#ga4dc9f189e6db00c523459eb34910dab4", null ],
     [ "operator/", "de/d7b/group__vec__3d.html#ga1bb5290a5de36c1b2ba18af0f9594755", null ],
-    [ "operator<<", "de/d7b/group__vec__3d.html#ga92cc7a2258afb382589433a6f88a0f31", null ],
-    [ "operator<<", "de/d7b/group__vec__3d.html#ga00532b7b8acc146fbcd6837b6fd1eea0", null ],
+    [ "operator<<", "de/d7b/group__vec__3d.html#gaa6be12202018c4ef80fec826235444b6", null ],
+    [ "operator<<", "de/d7b/group__vec__3d.html#ga836603cd857a2732349e915b7aa93131", null ],
     [ "operator^", "de/d7b/group__vec__3d.html#ga91c8e597fb2330bad130322c8c0157b3", null ],
     [ "operator~", "dc/d9a/group__quats.html#ga653964e988700bd42bb36b570dfa3d1a", null ],
     [ "operator~", "de/d7b/group__vec__3d.html#ga78c0ceb43fdc9e36b3a8257eedfdba91", null ],
-    [ "print_vector", "de/d7b/group__vec__3d.html#gaceaaa3044eb18a037ceba0a792ac1b2d", null ],
+    [ "print_vector", "de/d7b/group__vec__3d.html#ga91b08160430f21a1439063841b43386d", null ],
     [ "quat_from_euler", "dc/d9a/group__quats.html#ga4106f2538c634121520ceaf300255d2f", null ],
     [ "quaternion_add", "dc/d9a/group__quats.html#gab2ac584291e13eaa85d0b8a5e757858a", null ],
     [ "quaternion_multiply", "dc/d9a/group__quats.html#ga11f261987d3bfd7423193c263fc0f20d", null ],

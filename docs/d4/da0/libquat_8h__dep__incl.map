@@ -1,9 +1,9 @@
 <map id="include/libquat.h" name="include/libquat.h">
-<area shape="rect" id="node1" title="Library that provides data types for 3D vectors and quaternions, inter&#45;conversions and related operat..." alt="" coords="403,5,519,32"/>
-<area shape="rect" id="node2" href="$dd/dc7/libquat__err_8c.html" title="API functions to handle library errors." alt="" coords="5,80,120,107"/>
-<area shape="rect" id="node3" href="$da/d4a/libquat__internal_8c.html" title="API functions to handle library errors." alt="" coords="145,80,287,107"/>
-<area shape="rect" id="node4" href="$d4/d0e/libquat__quat_8cpp.html" title="API Functions related to 3D Quaternion operations." alt="" coords="312,80,451,107"/>
-<area shape="rect" id="node5" href="$d8/d03/libquat__vec_8cpp.html" title="API Functions related to 3D vector operations." alt="" coords="475,80,610,107"/>
-<area shape="rect" id="node6" href="$d8/db9/test_8c.html" title="Simple program in C to test the different aspects of libquat library." alt="" coords="635,80,723,107"/>
-<area shape="rect" id="node7" href="$df/dac/test_8cpp.html" title="Simple program in C++ to test the different aspects of libquat library." alt="" coords="747,80,850,107"/>
+<area shape="rect" id="node1" title="Library that provides data types for 3D vectors and quaternions, inter&#45;conversions and related operat..." alt="" coords="403,5,519,31"/>
+<area shape="rect" id="node2" href="$dd/dc7/libquat__err_8c.html" title="API functions to handle library errors." alt="" coords="5,79,120,104"/>
+<area shape="rect" id="node3" href="$da/d4a/libquat__internal_8c.html" title="API functions to handle library errors." alt="" coords="145,79,287,104"/>
+<area shape="rect" id="node4" href="$d4/d0e/libquat__quat_8cpp.html" title="API Functions related to 3D Quaternion operations." alt="" coords="312,79,451,104"/>
+<area shape="rect" id="node5" href="$d8/d03/libquat__vec_8cpp.html" title="API Functions related to 3D vector operations." alt="" coords="475,79,610,104"/>
+<area shape="rect" id="node6" href="$d8/db9/test_8c.html" title="Simple program in C to test the different aspects of libquat library." alt="" coords="635,79,723,104"/>
+<area shape="rect" id="node7" href="$df/dac/test_8cpp.html" title="Simple program in C++ to test the different aspects of libquat library." alt="" coords="747,79,850,104"/>
 </map>

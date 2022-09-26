@@ -1,7 +1,7 @@
 <map id="src/libquat_internal.c" name="src/libquat_internal.c">
-<area shape="rect" id="node1" title="API functions to handle library errors." alt="" coords="90,5,233,32"/>
-<area shape="rect" id="node2" href="$dc/d7a/libquat_8h.html" title="Library that provides data types for 3D vectors and quaternions, inter&#45;conversions and related operat..." alt="" coords="6,80,77,107"/>
-<area shape="rect" id="node4" href="$d7/dd9/libquat__internal_8h.html" title="API functions to handle library errors." alt="" coords="101,80,221,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="245,80,307,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,77,181"/>
+<area shape="rect" id="node1" title="API functions to handle library errors." alt="" coords="90,5,233,31"/>
+<area shape="rect" id="node2" href="$dc/d7a/libquat_8h.html" title="Library that provides data types for 3D vectors and quaternions, inter&#45;conversions and related operat..." alt="" coords="6,79,77,104"/>
+<area shape="rect" id="node4" href="$d7/dd9/libquat__internal_8h.html" title="API functions to handle library errors." alt="" coords="101,79,221,104"/>
+<area shape="rect" id="node5" title=" " alt="" coords="245,79,307,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,152,77,177"/>
 </map>

@@ -1,8 +1,8 @@
 <map id="tests/test.c" name="tests/test.c">
-<area shape="rect" id="node1" title="Simple program in C to test the different aspects of libquat library." alt="" coords="124,5,212,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,67,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="91,80,154,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="179,80,248,107"/>
-<area shape="rect" id="node5" href="$dc/d7a/libquat_8h.html" title="Library that provides data types for 3D vectors and quaternions, inter&#45;conversions and related operat..." alt="" coords="272,80,400,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="300,155,372,181"/>
+<area shape="rect" id="node1" title="Simple program in C to test the different aspects of libquat library." alt="" coords="124,5,212,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,67,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="91,79,154,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="179,79,248,104"/>
+<area shape="rect" id="node5" href="$dc/d7a/libquat_8h.html" title="Library that provides data types for 3D vectors and quaternions, inter&#45;conversions and related operat..." alt="" coords="272,79,400,104"/>
+<area shape="rect" id="node6" title=" " alt="" coords="300,152,372,177"/>
 </map>

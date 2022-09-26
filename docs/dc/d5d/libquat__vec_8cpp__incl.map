@@ -1,8 +1,8 @@
 <map id="src/libquat_vec.cpp" name="src/libquat_vec.cpp">
-<area shape="rect" id="node1" title="API Functions related to 3D vector operations." alt="" coords="101,5,235,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,64,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="88,80,155,107"/>
-<area shape="rect" id="node4" href="$dc/d7a/libquat_8h.html" title="Library that provides data types for 3D vectors and quaternions, inter&#45;conversions and related operat..." alt="" coords="179,80,250,107"/>
-<area shape="rect" id="node6" href="$d7/dd9/libquat__internal_8h.html" title="API functions to handle library errors." alt="" coords="275,80,395,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="179,155,251,181"/>
+<area shape="rect" id="node1" title="API Functions related to 3D vector operations." alt="" coords="101,5,235,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,64,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="88,79,155,104"/>
+<area shape="rect" id="node4" href="$dc/d7a/libquat_8h.html" title="Library that provides data types for 3D vectors and quaternions, inter&#45;conversions and related operat..." alt="" coords="179,79,250,104"/>
+<area shape="rect" id="node6" href="$d7/dd9/libquat__internal_8h.html" title="API functions to handle library errors." alt="" coords="275,79,395,104"/>
+<area shape="rect" id="node5" title=" " alt="" coords="179,152,251,177"/>
 </map>
