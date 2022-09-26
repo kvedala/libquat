@@ -19,8 +19,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # option (BUILD_SHARED_LIBS "Build the libquat library shared." ON)
 # option (BUILD_STATIC_LIBS "Build the libquat library static." ON)
 
-add_compile_definitions(LIBQUAT_MAJOR_VER=${LIBQUAT_VERSION_MAJOR})
-add_compile_definitions(LIBQUAT_MINOR_VER=${LIBQUAT_VERSION_MINOR})
+add_definitions(-DLIBQUAT_MAJOR_VER=${LIBQUAT_VERSION_MAJOR})
+add_definitions(-DLIBQUAT_MINOR_VER=${LIBQUAT_VERSION_MINOR})
 # configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/src/libquat.h.in"
 #                 "${CMAKE_CURRENT_SOURCE_DIR}/include/libquat.h" )
 
@@ -31,7 +31,7 @@ set(SOURCE_FILES
     src/libquat_internal.c
 )
 
-add_compile_definitions(BUILDING_LIBQUAT)
+add_definitions(-DBUILDING_LIBQUAT)
 # set(CMAKE_BUILD_STATIC_LIBS ON)
 # if(BUILD_STATIC_LIBS)
 # 	set(LIBTYPE STATIC)
